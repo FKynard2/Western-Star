@@ -1,0 +1,102 @@
+<script
+  type="application/json"
+  data-section-type="dynamic-highlights-banners"
+  data-section-id="{{ section.id }}">
+</script>
+
+{% if section.blocks.size > 0 %}
+  <style>
+    #shopify-section-{{ section.id }} {
+      background-color: {{ section.settings.background_color }};
+    }
+
+    #shopify-section-{{ section.id }} .highlights-banners {
+      background-color: {{ section.settings.inner_background_color }};
+      padding-top: {{ section.settings.section_spacing_mobile }}px;
+      padding-bottom: {{ section.settings.section_spacing_mobile }}px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      #shopify-section-{{section.id}} .highlights-banners {
+        padding-top: {{ section.settings.section_spacing_desktop }}px;
+        padding-bottom: {{ section.settings.section_spacing_desktop }}px;
+      }
+    }
+
+    #shopify-section-{{ section.id }} .highlights-banners-block {
+      color: {{ section.settings.color }};
+    }
+
+    #shopify-section-{{ section.id }} .highlights-banners-heading {
+      color: {{ section.settings.heading_color }};
+    }
+
+    #shopify-section-{{ section.id }} .highlights-banners-block::after {
+      background: {{ section.settings.dividers_color }};
+    }
+
+    #shopify-section-{{ section.id }} .highlights-banners-icon {
+      color: {{ section.settings.icon_color }};
+    }
+  </style>
+
+  <div class="highlights-banners-container">
+    <div
+      class="
+      highlights-banners
+      highlight-banners-count-{{ section.blocks.size }}
+      highlight-banners-align-{{ section.settings.text_alignment }}
+    ">
+      {% for block in section.blocks %}
+        {% if block.settings.text != blank or block.settings.title != blank %}
+          <div
+            class="highlights-banners-block"
+            {{ block.shopify_attributes }}
+          >
+            {% capture block_icon %}
+              {% if block.settings.icon != 'none' or block.settings.image != blank %}
+                <div class="highlights-banners-icon">
+                  {% if block.settings.image != blank %}
+                    {%
+                      include 'rimg',
+                      class: 'highlights-banners-custom-icon',
+                      img: block.settings.image,
+                      size: 'x46'
+                    %}
+                  {% else %}
+                    {% include 'icon-library', id: block.settings.icon %}
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endcapture %}
+            {% unless section.settings.text_alignment == 'right' %}
+              {{ block_icon }}
+            {% endunless %}
+            <div class="highlights-banners-text">
+              {% if block.settings.title != blank %}
+                <span class="highlights-banners-heading">
+                  {{ block.settings.title | escape }}
+                </span>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                {{ block.settings.text }}
+              {% endif %}
+            </div>
+            {% if section.settings.text_alignment == 'right' %}
+              {{ block_icon }}
+            {% endif %}
+            {% if block.settings.link != blank %}
+              <a
+                class="highlights-banners-block-link"
+                href="{{ block.settings.link }}"
+                {{ block.shopify_attributes }}
+              >
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,434 @@
+{
+  "sections": {
+    "1657742126be2ce4a9": {
+      "type": "dynamic-image-with-text-overlay",
+      "settings": {
+        "section_height": "original",
+        "background_color": "",
+        "section_spacing_desktop": 50,
+        "section_spacing_mobile": 36,
+        "image": "shopify:\/\/shop_images\/SoccerFieldBanner.png",
+        "position": "center center",
+        "title": "A NEW AGE FOR SPORTING GOODS",
+        "text": "<p>Choose Your Sport Below<\/p>",
+        "content_position": "center-center",
+        "overlay_style": "solid",
+        "color": "#ffffff",
+        "overlay_background": "#000000",
+        "overlay_opacity": 50,
+        "link": "",
+        "button_text": ""
+      }
+    },
+    "16579057229aa3a14e": {
+      "type": "dynamic-collection-list",
+      "blocks": {
+        "1657905722bdf5c006-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "soccer",
+            "image": "shopify:\/\/shop_images\/Soccer_1_d2abe64e-0701-4d7a-b629-1db94509116c.jpg",
+            "collection_label": "SOCCER",
+            "mobile_collection_label": ""
+          }
+        },
+        "1657905722bdf5c006-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "football",
+            "image": "shopify:\/\/shop_images\/Football_a577051a-24e0-4741-b14a-f264a4fda8f6.jpg",
+            "collection_label": "FOOTBALL",
+            "mobile_collection_label": ""
+          }
+        },
+        "1657905722bdf5c006-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "volleyballs",
+            "image": "shopify:\/\/shop_images\/volleyball.jpg",
+            "collection_label": "VOLLEYBALLS",
+            "mobile_collection_label": ""
+          }
+        },
+        "1657905722bdf5c006-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "basketball",
+            "image": "shopify:\/\/shop_images\/basketball.jpg",
+            "collection_label": "BASKETBALLS",
+            "mobile_collection_label": ""
+          }
+        },
+        "19f9f6b2-ca53-4fac-9cbf-34a0400ecc93": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-balls",
+            "image": "shopify:\/\/shop_images\/DYO.png",
+            "collection_label": "CUSTOM",
+            "mobile_collection_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "1657905722bdf5c006-0",
+        "1657905722bdf5c006-1",
+        "1657905722bdf5c006-2",
+        "1657905722bdf5c006-3",
+        "19f9f6b2-ca53-4fac-9cbf-34a0400ecc93"
+      ],
+      "settings": {
+        "title": "",
+        "subheading": "",
+        "heading_color": "#4d4d4d",
+        "subheading_color": "#4d4d4d",
+        "background_color": "",
+        "section_spacing_desktop": 31,
+        "section_spacing_mobile": 30,
+        "label_style": "label-style-heading",
+        "text_alignment": "center",
+        "desktop_collections_per_row": 5,
+        "display_desktop_collections": "2",
+        "desktop_collection_width": "desktop-full-width",
+        "layout_collection_max_width": 1600,
+        "desktop_collection_max_width": 500,
+        "mobile_collections_per_row": 2,
+        "display_mobile_collections": "2",
+        "mobile_collection_width": "mobile-full-width",
+        "mobile_collection_max_width": 80
+      }
+    },
+    "collection-list": {
+      "type": "dynamic-collection-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "soccer",
+            "image": "shopify:\/\/shop_images\/Soccer_1_d2abe64e-0701-4d7a-b629-1db94509116c.jpg",
+            "collection_label": "Soccer",
+            "mobile_collection_label": "Soccer"
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "football",
+            "image": "shopify:\/\/shop_images\/Football_a577051a-24e0-4741-b14a-f264a4fda8f6.jpg",
+            "collection_label": "Football",
+            "mobile_collection_label": "Football"
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "volleyballs",
+            "image": "shopify:\/\/shop_images\/volleyball.jpg",
+            "collection_label": "Volleyball",
+            "mobile_collection_label": "Volleyball"
+          }
+        },
+        "collection-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "basketball-1",
+            "image": "shopify:\/\/shop_images\/basketball.jpg",
+            "collection_label": "Basketball",
+            "mobile_collection_label": "Basketball"
+          }
+        },
+        "collection-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-balls",
+            "image": "shopify:\/\/shop_images\/DYO.png",
+            "collection_label": "Design Your Own",
+            "mobile_collection_label": "Design Your Own"
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "collection-4",
+        "collection-5"
+      ],
+      "settings": {
+        "title": "A NEW AGE FOR SPORTING GOODS",
+        "subheading": "<p>Choose Your Sport Below<\/p>",
+        "heading_color": "#ffffff",
+        "subheading_color": "#ffffff",
+        "background_color": "#064664",
+        "section_spacing_desktop": 31,
+        "section_spacing_mobile": 30,
+        "label_style": "label-style-heading",
+        "text_alignment": "center",
+        "desktop_collections_per_row": 5,
+        "display_desktop_collections": "2",
+        "desktop_collection_width": "desktop-full-width",
+        "layout_collection_max_width": 1600,
+        "desktop_collection_max_width": 500,
+        "mobile_collections_per_row": 2,
+        "display_mobile_collections": "2",
+        "mobile_collection_width": "mobile-full-width",
+        "mobile_collection_max_width": 80,
+        "background-image-logo": "shopify:\/\/shop_images\/donnycocacola--3pxa1O1zoI-unsplash_1_1.png"
+      }
+    },
+    "highlights-banner": {
+      "type": "dynamic-highlights-banners",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery",
+            "image": "shopify:\/\/shop_images\/Icon_1.png",
+            "title": "Choose Your Ball",
+            "text": "",
+            "link": ""
+          }
+        },
+        "highlight-2": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "image": "shopify:\/\/shop_images\/Icon_2.png",
+            "title": "Upload Your Design",
+            "text": "",
+            "link": ""
+          }
+        },
+        "highlight-3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "image": "shopify:\/\/shop_images\/Icon_3.png",
+            "title": "Order Your Custom Ball",
+            "text": "",
+            "link": ""
+          }
+        },
+        "3a289d5a-4e79-4565-88d8-b843f9a78a3e": {
+          "type": "highlight",
+          "settings": {
+            "icon": "none",
+            "image": "shopify:\/\/shop_images\/start.png",
+            "title": "",
+            "text": "<p> <\/p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-2",
+        "highlight-3",
+        "3a289d5a-4e79-4565-88d8-b843f9a78a3e"
+      ],
+      "settings": {
+        "background_color": "#064664",
+        "section_spacing_desktop": 36,
+        "section_spacing_mobile": 86,
+        "text_alignment": "center",
+        "heading_color": "#ffffff",
+        "color": "#ffffff",
+        "icon_color": "#ffffff",
+        "dividers_color": "rgba(0,0,0,0)",
+        "inner_background_color": "#064664"
+      }
+    },
+    "featured-collections": {
+      "type": "dynamic-featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "playground",
+            "image": "shopify:\/\/shop_images\/image_421.png",
+            "title": "",
+            "title_mobile": ""
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "water",
+            "image": "shopify:\/\/shop_images\/image_421.png",
+            "title": "",
+            "title_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2"
+      ],
+      "settings": {
+        "title": "",
+        "subheading": "",
+        "heading_color": "#212121",
+        "subheading_color": "#4d4d4d",
+        "background_color": "#ffffff",
+        "section_spacing_desktop": 29,
+        "section_spacing_mobile": 10,
+        "image": "shopify:\/\/shop_images\/C1Ball.png",
+        "promo_title": "Collection 1",
+        "text": "",
+        "color": "#ffffff",
+        "block_link": "",
+        "button_text": "Button",
+        "button_style": "primary",
+        "text_alignment": "top-left",
+        "overlay_style": "none",
+        "overlay_color": "#000000",
+        "opacity": 42,
+        "collection_label_style": "heading",
+        "collection_text_alignment": "left"
+      }
+    },
+    "16563382774c376916": {
+      "type": "dynamic-image-with-text",
+      "blocks": {
+        "1656338276835348af-0": {
+          "type": "image_with_text",
+          "settings": {
+            "img_desktop": "shopify:\/\/shop_images\/QualityLego.png",
+            "img_position_desktop": "left",
+            "img_width_desktop": 43,
+            "img_height_desktop": "natural",
+            "custom_height_desktop": 500,
+            "img_position_mobile": "top",
+            "img_height_mobile": "natural",
+            "custom_height_mobile": 500,
+            "content_background_color": "#ffffff",
+            "preheading": "",
+            "preheading_color": "#4d4d4d",
+            "heading": "AS A COMPANY, WESTERN STAR PROVIDES THE BEST QUALITY SPORTING GOODS PRODUCTS WITH A PERSONALIZED APPROACH",
+            "heading_color": "#000000",
+            "heading_size": "medium",
+            "text_content": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_content_color": "#4d4d4d",
+            "button_link": "",
+            "button_text": "VIEW MORE",
+            "button_style": "primary",
+            "signpost_color": "#111111",
+            "block_link": false,
+            "text_vertical_position": "middle",
+            "text_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "1656338276835348af-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "background_color": "",
+        "heading_color": "#4d4d4d",
+        "subheading_color": "#4d4d4d",
+        "section_spacing_desktop": 50,
+        "section_spacing_mobile": 36,
+        "content_spacing": 0
+      }
+    },
+    "featured-collection": {
+      "type": "dynamic-featured-collection",
+      "blocks": {
+        "title-card-1": {
+          "type": "title_card",
+          "settings": {
+            "banner_position": "last",
+            "banner_preheading": "Shop this",
+            "banner_heading": "Collection",
+            "banner_preheading_color": "#ffffff",
+            "banner_heading_color": "#ffffff",
+            "banner_overlay_color": "",
+            "banner_overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "title-card-1"
+      ],
+      "settings": {
+        "title": "TRENDING",
+        "subheading": "<p>The World's Premium Sporting Brands in One Destination.<\/p>",
+        "heading_color": "#000000",
+        "subheading_color": "#4d4d4d",
+        "background_color": "#ffffff",
+        "section_spacing_desktop": 50,
+        "section_spacing_mobile": 30,
+        "collection": "all-products",
+        "product_count": 5,
+        "product_layout": "grid",
+        "cta_text": "SHOP ALL",
+        "cta_button_style": "primary",
+        "background_image_position": "center-middle",
+        "background_overlay_style": "none",
+        "background_overlay_color": "",
+        "background_overlay_opacity": 50
+      }
+    },
+    "highlights-banner-2": {
+      "type": "dynamic-highlights-banners",
+      "disabled": true,
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery-alt",
+            "title": "FAST AND FREE DELIVERY",
+            "text": "<p>When you spend $100+<\/p>",
+            "link": ""
+          }
+        },
+        "highlight-2": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-chat",
+            "title": "24\/7 CUSTOMER SUPPORT",
+            "text": "<p>Friendly 24\/7 customer support<\/p>",
+            "link": ""
+          }
+        },
+        "highlight-3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-wallet",
+            "image": "shopify:\/\/shop_images\/Untitled.png",
+            "title": "MONEY BACK GUARANTEE",
+            "text": "<p>Refunds within 30 days of purchase<\/p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-2",
+        "highlight-3"
+      ],
+      "settings": {
+        "background_color": "#064664",
+        "section_spacing_desktop": 36,
+        "section_spacing_mobile": 20,
+        "text_alignment": "left",
+        "heading_color": "#ffffff",
+        "color": "#ffffff",
+        "icon_color": "#ffffff",
+        "dividers_color": "rgba(0,0,0,0)",
+        "inner_background_color": "#064664"
+      }
+    }
+  },
+  "order": [
+    "1657742126be2ce4a9",
+    "16579057229aa3a14e",
+    "collection-list",
+    "highlights-banner",
+    "featured-collections",
+    "16563382774c376916",
+    "featured-collection",
+    "highlights-banner-2"
+  ]
+}

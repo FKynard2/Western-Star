@@ -1,0 +1,14 @@
+{% comment %}
+Loop through filter groups
+{% endcomment %}
+
+{%- capture tag_icon -%}
+<span class="filter-icon--checkbox">
+  {% include 'icon-library', id: 'icon-checkbox' %}
+</span>
+{%- endcapture -%}
+
+<div class="filter-icon-container">
+  <a href="#" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false" class="filter-btn">{% include 'icon-library', id: 'icon-filter' %}</a>
+  <a href="#" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false" class="filter-btn">{{'product_grid.filters.title_count.zero' | t | upcase }}</a>
+</div>
