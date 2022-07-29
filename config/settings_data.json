@@ -47,7 +47,7 @@
     "color_buttons_sold_out_button_text": "#ffffff",
     "color_buttons_sold_out_button_background": "#000000",
     "color_products_vendor_name": "#555555",
-    "color_products_regular_price": "#212121",
+    "color_products_regular_price": "#064664",
     "color_products_compare_at_price": "#b4b4b4",
     "color_products_sale_price": "#a12f18",
     "color_products_sale_badge": "#a12f18",
@@ -55,7 +55,7 @@
     "color_products_product_gallery_active_thumbnail": "#d7d7d7",
     "color_product_reviews_star_rating_border": "#7c7873",
     "color_product_reviews_star_rating_active": "#000000",
-    "color_layout_secondary_backgrounds": "#fafafa",
+    "color_layout_secondary_backgrounds": "#ffffff",
     "color_layout_dividers": "#ffffff",
     "color_site_overlays_overlay": "#212121",
     "color_footer_background": "#064664",
@@ -90,7 +90,7 @@
     "type_button_capitalize": true,
     "type_button_spacing": 1,
     "type_signpost": "work_sans_n5",
-    "type_product_price": "work_sans_n5",
+    "type_product_price": "montserrat_n7",
     "type_product_vendor": "twentieth_century_n4",
     "type_product_capitalize": true,
     "type_product_vendor_spacing": 1,
@@ -425,6 +425,10 @@
           "dividers_color": "#064664",
           "inner_background_color": "#064664"
         }
+      },
+      "filter-drawer": {
+        "type": "filter-drawer",
+        "settings": {}
       }
     },
     "content_for_index": []

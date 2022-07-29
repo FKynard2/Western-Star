@@ -39,7 +39,7 @@
       "see_less": "See less"
     },
     "pagination": {
-      "prev": "Previous",
+      "prev": "View",
       "next": "Next",
       "load": "Load more products"
     },
@@ -381,7 +381,7 @@
       "price_to": "To"
     },
     "sort_by": {
-      "title": "Sort by"
+      "title": "Sort"
     },
     "show_per_page": {
       "title": "Show"
@@ -512,6 +512,15 @@
       "tweet_html": "Connect your Twitter account to engage customers on and off your site!",
       "username": "username",
       "time": "8 hours ago"
+    }
+  },
+  "sections": {
+    "dynamic-newsletter": {
+      "form": {
+        "placeholder": "Your email address",
+        "submit": "JOIN",
+        "success": "Thanks for subscribing!"
+      }
     }
   }
 }
