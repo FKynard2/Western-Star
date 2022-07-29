@@ -236,10 +236,9 @@
     {% endcapture %}
   {%- endif -%}
 
-  <script type="application/json" data-product-data>
+<script type="application/json" data-product-data>
     {{ json }}
-  </script>
-
+  </script> 
   <article class="productitem" data-product-item-content>
     {{ recently_viewed_header }}
     <a
@@ -340,8 +339,9 @@
             variant: product.selected_or_first_available_variant
           %}
         </div>
+           
       {% endif %}
-
+      
       {% if settings.product_ratings_reviews and product_ratings_star_display and product.metafields.reviews.rating.value != blank %}
         <div class="productitem--ratings">
           <span class="shopify-product-reviews-badge" data-id="{{ product.id }}">
@@ -361,6 +361,9 @@
       {% if swatches_on_hover %}
         {{ product_item_swatches }}
       {% endif %}
+      
+    
+            
 
       {% if product_description %}
         <div class="productitem--description">
@@ -384,11 +387,11 @@
         {% comment %}
           Default button appearance and text
         {% endcomment %}
-        {% assign quick_shop_text = 'product.buttons.quick_shop' | t %}
+        {% assign quick_shop_text = '(Click for Quick Shop)' %}
         {% assign quick_buy_text = 'product.buttons.add_to_cart' | t %}
 
-        {% assign quick_shop_classes = 'productitem--action-trigger productitem--action-qs button-secondary' %}
-        {% assign quick_buy_classes = 'productitem--action-trigger productitem--action-atc button-primary' %}
+        {% assign quick_shop_classes = 'productitem--action-trigger productitem--action-qs product-item-btn-2' %}
+        {% assign quick_buy_classes = 'productitem--action-trigger productitem--action-atc button-secondary' %}
 
         {% if has_variants %}
           {% assign quick_buy_text = 'product.buttons.choose_options' | t %}
@@ -400,6 +403,7 @@
         {% endunless %}
 
         <div class="productitem--actions" data-product-actions>
+      
           {% if section.settings.grid_list %}
             <div class="productitem--listview-price">
               {{ product_item_price }}
@@ -437,26 +441,7 @@
                 {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
               "
             >
-              <button
-                class="{{ quick_buy_classes }}"
-                type="button"
-                aria-label="{{ quick_buy_text }}"
-                {% unless has_variants %}
-                  data-quick-buy
-                {% else %}
-                  data-quickshop-trigger="slim"
-                {% endunless %}
-                data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                {% unless product_available %}disabled{% endunless %}
-              >
-                <span class="atc-button--text">
-                  {{ quick_buy_text }}
-                </span>
-                <span class="atc-button--icon">
-                  {% include 'icon-library', id: 'icon-spinner' %}
-                </span>
-              </button>
-            </div>
+             
           {% endif %}
 
           {% if quick_shop_display != 'disabled' %}
@@ -481,7 +466,35 @@
       {% endif %}
     {% endif %}
   </article>
-
+{% assign quick_buy_classes = ' productitem--action-atc button-secondary product-item-btn' %}
+      {% assign quick_buy_text = 'product.buttons.add_to_cart' | t %}
+              {% if atc_display != 'disabled' %}
+            <div
+              class="
+                productitem--action
+                quickshop-button
+                {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
+              "
+            >
+              <button
+                class="{{ quick_buy_classes }}"
+                type="button"
+                aria-label="{{ quick_buy_text }}"
+                {% unless has_variants %}
+                  data-quick-buy
+                {% else %}
+                  data-quickshop-trigger="slim"
+                {% endunless %}
+                data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                {% unless product_available %}disabled{% endunless %}
+              >
+                <span class="atc-button--text">
+                  {{ quick_buy_text }}
+                </span>
+                
+              </button>
+          </div>
+          {% endif %}
   {% if recently_viewed != true %}
     {% if atc_display != 'disabled' %}
       <script type="application/json" data-quick-buy-settings>
