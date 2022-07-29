@@ -6589,7 +6589,8 @@ em strong {
 {% comment %} Added this for a for a display flex on the banner {% endcomment %}
 .dynamic-collection-list-new{
   width: 78%;
-  display: flex;
+  display: flex; 
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 720px) {
@@ -6641,6 +6642,24 @@ em strong {
   .desktop-collections-per-row-6 .dynamic-collection-list--item:nth-child(6n+1) {
     margin-left: 0;
     clear: left;
+  }
+  .desktop-collections-per-row-7 .dynamic-collection-list--item:nth-child(7n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .desktop-collections-per-row-8 .dynamic-collection-list--item:nth-child(8n+1) {
+    margin-left: 0;
+    clear: left;
+    
+  }
+  .desktop-collections-per-row-8  {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .desktop-collections-per-row-7  {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 38px;
   }
 }
 @media screen and (max-width: 719px) {
@@ -17137,13 +17156,13 @@ noscript .disclosure-list {
 }
 @media screen and (max-width: 1440px) {
   .product-item-btn{
-    left: 215px;
+    left: 185px;
     width: 140px;
   }
 }
 @media screen and (max-width: 1280px) {
   .product-item-btn{
-    left: 190px;
+    left: 155px;
   }
 }
 @media screen and (max-width: 1120px) {
@@ -17151,6 +17170,7 @@ noscript .disclosure-list {
     left: 130px;
   }
 }
+
 .product-item-btn-2 {
     border-radius: 0;
     background-color: #f7b102c2;
@@ -17358,6 +17378,42 @@ noscript .disclosure-list {
   display: grid;
   grid-template-rows: 69% 29%;
   width: 77%;
+}
+@media screen and (max-width: 820px) {
+  .productitem--info {
+    margin-left: .0625rem;
+    margin-right: 0;
+    grid-template-rows: 80% 20%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .breadcrumbs-container {
+    width: 70%;
+  }
+  .product-grid-top-nav {
+    width: 90%;
+  }
+  .pagination__wrapper {
+    margin-bottom: 0;
+  }
+  .pagination {
+    border-right: none;
+  }
+  .dynamic-collection-list--container {
+    margin-left: -25px;
+  }
+  .label-style-heading .dynamic-collection-list--item-title, .label-style-heading .dynamic-collection-list--item-title-mobile {
+    font-size: 10px;
+}
+}
+@media screen and (max-width: 400px) {
+  .dynamic-collection-list--container {
+    width: 100%;
+  }
+  .dynamic-collection-list--container {
+    margin: 0;
+  }
 }
 .productgrid--no-spacing .productitem--info {
   padding: {{ settings.type_size_base | times: 0.75 | divided_by: 16.0 | append: 'rem' }} 0 0;
