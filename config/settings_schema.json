@@ -130,6 +130,12 @@
       },
       {
         "type": "color",
+        "id": "color_header_text_hover",
+        "label": "Header text hover",
+        "default": "#f8b101"
+      },
+      {
+        "type": "color",
         "id": "color_header_logo_text",
         "label": "Logo text",
         "default": "#ffffff"

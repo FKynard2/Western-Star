@@ -8,6 +8,7 @@
     "form_border_radius": 3,
     "color_header_background": "#064664",
     "color_header_text": "#ffffff",
+    "color_header_text_hover": "#f8b101",
     "color_header_logo_text": "#000000",
     "color_header_cart_count_background": "#f7b102",
     "color_header_search_bar_background": "#064664",

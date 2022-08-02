@@ -208,6 +208,14 @@
   font-size: 80px;
   font-weight: 500;
 }
+@media (max-width: 1315px) {
+  .dynamic-collection-list--section-home .home-section--title {
+    font-size: 60px;
+    
+  }
+}
+  
+
 .dynamic-collection-list--section-home .home-section--title-container {
   margin-top: 0;
   margin-bottom: 6.625rem;
