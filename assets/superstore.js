@@ -32916,7 +32916,10 @@ class StaticCollectionFaceted {
     this.el.querySelectorAll(this.viewToggleSelector).forEach(el => {
       el.classList.remove('active');
     });
-    this.el.querySelector(`[data-collection-view="${view}"]`).classList.add('active');
+    if ( this.el.querySelector(`[data-collection-view="${view}"]`) ) {
+      this.el.querySelector(`[data-collection-view="${view}"]`).classList.add('active');
+    }
+    
     const className = view.replace('-', '');
     const gridContainer = this.el.querySelector('.productgrid--outer');
 

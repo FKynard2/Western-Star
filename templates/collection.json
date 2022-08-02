@@ -14,7 +14,7 @@
         "1658966432ca53a1fe-1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "soccer",
             "collection_label": "",
             "mobile_collection_label": ""
           }
@@ -22,7 +22,7 @@
         "1658966432ca53a1fe-2": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "basketball-1",
             "collection_label": "",
             "mobile_collection_label": ""
           }
@@ -30,7 +30,7 @@
         "1658966432ca53a1fe-3": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "football",
             "collection_label": "",
             "mobile_collection_label": ""
           }
@@ -38,7 +38,7 @@
         "1658966432ca53a1fe-4": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "volleyballs",
             "collection_label": "",
             "mobile_collection_label": ""
           }
@@ -46,7 +46,7 @@
         "1658966432ca53a1fe-5": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "custom-balls",
             "collection_label": "",
             "mobile_collection_label": ""
           }
@@ -54,7 +54,7 @@
         "9a2c6597-02c1-4c43-bcf1-755dcf12ee06": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "water",
             "collection_label": "",
             "mobile_collection_label": ""
           }
@@ -62,7 +62,7 @@
         "425999af-60be-44e7-b119-49afa0d1e1be": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "playground",
             "collection_label": "",
             "mobile_collection_label": ""
           }
