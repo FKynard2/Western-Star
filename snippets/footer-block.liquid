@@ -47,7 +47,7 @@
     {% endif %}
   {% elsif block.type == 'social_accounts' %}
     <img src="{{ section.settings.logo_image | img_url: 'master' }}">
-    <p>{{section.settings.footer-address}}</p>
+    <p class= "footer-address">{{section.settings.footer-address}}</p>
     <h2 class="site-footer-block-title">
       {{ 'footer.general.follow_us' | t }}
     </h2>
