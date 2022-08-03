@@ -97,7 +97,11 @@
           </div>
         {% endif %}
       {% endfor %}
+      {% if section.settings.banner_button %}
+      <div class="highlights-banners-block"><a class="button-primary custom-ball-btn">Start Designing</a></div> 
+      {% endif%}
     </div>
+    
   </div>
 {% endif %}
 
@@ -185,6 +189,11 @@
       "type": "color",
       "label": "Background",
       "default": "#f8f8f8"
+    },
+    {
+      "type": "checkbox",
+      "id": "banner_button",
+      "label": "Banner Button"
     }
   ],
   "blocks": [

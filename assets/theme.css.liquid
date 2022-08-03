@@ -3163,7 +3163,8 @@ h6 {
 }
 .shortcode--product-cta[button-style=primary]:not(.disabled):hover:not([hidden]), .shopify-payment-button .shopify-payment-button__button--unbranded:not(.disabled):hover, .product-form--atc-button:not(.disabled):hover, .image-with-text-button:not(.disabled):hover, .shopify-challenge__container .btn:not(.disabled):hover, .button-primary:not(.disabled):hover, .productgrid--no-results-button:not(.disabled):hover {
   background: {{ settings.color_buttons_primary_button_background_hover }};
-  border: 1px solid {{ settings.color_buttons_primary_button_background_hover }};
+  border: 1px solid {{ settings.color_buttons_primary_button_border_hover }};
+  color: {{ settings.color_buttons_primary_button_border_hover }} ;
 }
 .shortcode--product-cta[button-style=primary]:active:not([hidden]), .shopify-payment-button .shopify-payment-button__button--unbranded:active, .product-form--atc-button:active, .image-with-text-button:active, .shopify-challenge__container .btn:active, .button-primary:active, .productgrid--no-results-button:active, .shortcode--product-cta[button-style=primary]:focus:not([hidden]), .shopify-payment-button .shopify-payment-button__button--unbranded:focus, .product-form--atc-button:focus, .image-with-text-button:focus, .shopify-challenge__container .btn:focus, .button-primary:focus, .productgrid--no-results-button:focus {
   background: {{ settings.color_buttons_primary_button_background_hover }};
@@ -22213,5 +22214,18 @@ summary::after {
 
   details[open] summary::after {
     transform: translateY(-50%) rotate(-90deg);
+  }
+}
+
+.custom-ball-btn {
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 1280px) {
+  .custom-ball-btn {
+    font-size: 18px;
   }
 }

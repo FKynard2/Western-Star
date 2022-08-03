@@ -370,6 +370,12 @@
       },
       {
         "type": "color",
+        "id": "color_buttons_primary_button_border_hover",
+        "label": "Primary border and text hover",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
         "id": "color_buttons_primary_button_text",
         "label": "Primary button text",
         "default": "#222222"

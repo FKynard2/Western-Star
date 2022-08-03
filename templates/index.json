@@ -210,6 +210,7 @@
         },
         "3a289d5a-4e79-4565-88d8-b843f9a78a3e": {
           "type": "highlight",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "image": "shopify:\/\/shop_images\/start.png",
@@ -234,7 +235,8 @@
         "color": "#ffffff",
         "icon_color": "#ffffff",
         "dividers_color": "rgba(0,0,0,0)",
-        "inner_background_color": "#064664"
+        "inner_background_color": "#064664",
+        "banner_button": true
       }
     },
     "16593751660071953e": {
