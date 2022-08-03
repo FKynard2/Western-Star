@@ -6589,7 +6589,7 @@ em strong {
 }
 {% comment %} Added this for a for a display flex on the banner {% endcomment %}
 .dynamic-collection-list-new{
-  width: 78%;
+  width: 85%;
   display: flex; 
   flex-wrap: wrap;
 }
@@ -14590,10 +14590,23 @@ li.navmenu-meganav--image-container {
 }
 
 .collection--item-image {
-  position: relative;
-  height: auto;
-  margin: 0 auto;
+    position: relative;
+    height: auto;
+    margin: 0 auto;
 }
+
+.collection--item-image-highligh-banner {
+    position: relative; 
+    margin: 0 auto;
+    float: left;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: white; 
+    border: 20px solid white; 
+}
+
 .collection--item-image a {
   display: block;
 }
@@ -17155,6 +17168,7 @@ noscript .disclosure-list {
     left: 245px;
     bottom: 7px;
     height: 50px;
+    font-size: 15px;
 }
 @media screen and (max-width: 1440px) {
   .product-item-btn{
@@ -17371,15 +17385,14 @@ noscript .disclosure-list {
 }
 
 .productitem--info {
-  position: relative;
-  {% comment %} padding: {{ settings.type_size_base | times: 0.75 | divided_by: 16.0 | append: 'rem' }} 0.9375rem 0; {% endcomment %}
-  margin-right: -0.9375rem;
-  margin-left: -0.9375rem;
-  word-break: break-word;
-  background-color: {{ settings.color_product_cards_background }};
-  display: grid;
-  grid-template-rows: 69% 29%;
-  width: 77%;
+    position: relative;
+    margin-right: -0.9375rem;
+    margin-left: 0.0625rem;
+    word-break: break-word;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 69% 29%;
+    width: 55%;
 }
 @media screen and (max-width: 820px) {
   .productitem--info {
@@ -17402,9 +17415,7 @@ noscript .disclosure-list {
   .pagination {
     border-right: none;
   }
-  .dynamic-collection-list--container {
-    margin-left: -25px;
-  }
+
   .label-style-heading .dynamic-collection-list--item-title, .label-style-heading .dynamic-collection-list--item-title-mobile {
     font-size: 10px;
 }
@@ -22227,5 +22238,33 @@ summary::after {
 @media screen and (max-width: 1280px) {
   .custom-ball-btn {
     font-size: 18px;
+  }
+}
+
+
+
+@media screen and (max-width: 1280px) {
+  .collection--item-image-highligh-banner {
+    
+  }
+}
+@media screen and (max-width: 1080px) {
+  .collection--item-image-highligh-banner {
+    height:104px;
+    border: 12px solid white;
+  }
+  .dynamic-collection-list-new {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .collection--item-image-highligh-banner {
+    height:185px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .collection--item-image-highligh-banner {
+    height:110px;
+    width: 90%;
   }
 }
