@@ -77,6 +77,9 @@
     hover_zoom: gallery_hover_zoom,
     onboarding: onboarding,
   %}
+  
+
+
   <div class="product-main">
     <div class="product-details" data-product-details>
 
@@ -173,6 +176,7 @@
                   emphasize_price: false,
                   show_original: true
                 %}
+                   
               </div>
 
             {% when 'sku' %}
@@ -185,26 +189,42 @@
                 >
                   {{ 'product.general.sku_html' | t: sku: sku | strip_newlines }}
                 </div>
-              {% endunless %}
+              
+                {% endunless %}
 
             {% when 'form' %}
+            
               {%- assign product_sold_out = false -%}
               {%- if settings.in_stock_notification_form != 'disabled' and product.available == false -%}
                 {%- assign product_sold_out = true -%}
               {%- endif -%}
+            
               <div class="product-form--regular" data-product-form>
+
+              
+                {%
+                  include 'product-gallery-navigation'
+                  product: product,
+                  selected_media: selected_media,
+                  aspect_ratio: aspect_ratio,
+                  image_crop: image_crop,
+                %}
+               
+  
                 <div {% if product_sold_out %}class="product-sold-out"{% endif %} data-product-form-area>
                   {% if is_product_modal %}
                     <div data-product-quickshop-message class="product-message--container"></div>
                   {% endif %}
                   {% unless onboarding %}
+                 
                     {%
                       include 'product-form',
                       product: product,
                       show_dcb: show_dcb,
                       selected_variant: selected_variant,
-                      is_product_modal: false,
+                      is_product_modal: true,
                     %}
+                    
 
                     {% if settings.in_stock_notification_form != 'disabled' %}
                       {%

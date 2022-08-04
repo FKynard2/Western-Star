@@ -47,7 +47,11 @@
     {% endif %}
   {% elsif block.type == 'social_accounts' %}
     <img src="{{ section.settings.logo_image | img_url: 'master' }}">
-    <p class= "footer-address">{{section.settings.footer-address}}</p>
+    
+    {%capture section.settings.footer-address%}
+    206 Clary Ave  San Gabriel, CA  91776 United States
+    {% endcapture%}
+    <p>{{section.settings.footer-address | newline_to_br }}</p>
     <h2 class="site-footer-block-title">
       {{ 'footer.general.follow_us' | t }}
     </h2>

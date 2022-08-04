@@ -115,14 +115,14 @@
     "product_grid_show_second_image": true,
     "product_grid_emphasize_price": false,
     "social_facebook": "",
-    "social_instagram": "https:\/\/instagram.com\/westernstarsoccer",
+    "social_instagram": "https://instagram.com/westernstarsoccer",
     "social_pinterest": "",
-    "social_tiktok": "https:\/\/tiktok.com\/@westernstarsports",
+    "social_tiktok": "https://tiktok.com/@westernstarsports",
     "social_twitter": "",
     "social_youtube": "",
     "enable_checkout_lock_icon": false,
-    "continue_shopping_url": "shopify:\/\/collections\/all",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Western_Star_Logo_PNG_420000f2-b280-432b-9d1c-2008c42dbdd1.png",
+    "continue_shopping_url": "shopify://collections/all",
+    "checkout_logo_image": "shopify://shop_images/Western_Star_Logo_PNG_420000f2-b280-432b-9d1c-2008c42dbdd1.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "large",
     "checkout_input_background_color_mode": "white",
@@ -149,9 +149,7 @@
             }
           }
         },
-        "block_order": [
-          "1554839628889"
-        ],
+        "block_order": ["1554839628889"],
         "settings": {
           "sticky_header": false,
           "full_width_header": true,
@@ -202,7 +200,7 @@
             "type": "newsletter",
             "settings": {
               "title": "SUBSCRIBE",
-              "text": "<p>Be the first to get the latest news about trends, promotions, and much more!<\/p>",
+              "text": "<p>Be the first to get the latest news about trends, promotions, and much more!</p>",
               "button_style": "primary"
             }
           }
@@ -220,8 +218,8 @@
           "show_locale_selector": false,
           "show_currency_selector": false,
           "additional_menu": "footer",
-          "logo_image": "shopify:\/\/shop_images\/Western_Star_Logo_PNG_1.png",
-          "footer-address": "<p>206 Clary Ave, San Gabriel, CA 91776 United States<\/p><p>sales@championball.com +1 626-292-7880<\/p>",
+          "logo_image": "shopify://shop_images/Western_Star_Logo_PNG_1.png",
+          "footer-address": "<p>206 Clary Ave, San Gabriel, CA 917                               United States</p><p>sales@championball.com +1 626-292-7880</p>",
           "small_text": ""
         }
       },
@@ -255,15 +253,13 @@
             }
           }
         },
-        "block_order": [
-          "1556742300890"
-        ],
+        "block_order": ["1556742300890"],
         "settings": {
           "sticky_header": false,
           "full_width_header": true,
           "header_logo_layout": "left",
           "menu": "gapstow-main-menu",
-          "desktop_logo": "shopify:\/\/shop_images\/Western_Star_Logo_PNG.png",
+          "desktop_logo": "shopify://shop_images/Western_Star_Logo_PNG.png",
           "desktop_logo_height": 66,
           "mobile_logo_height": 20,
           "border_enabled": true,
@@ -296,7 +292,7 @@
             "type": "slide",
             "disabled": true,
             "settings": {
-              "background_image": "shopify:\/\/shop_images\/SoccerFieldBanner.png",
+              "background_image": "shopify://shop_images/SoccerFieldBanner.png",
               "title": "A NEW AGE FOR SPORTING GOODS",
               "text": "Choose Your Sport Below",
               "color": "#ffffff",
@@ -346,10 +342,7 @@
             }
           }
         },
-        "block_order": [
-          "static-slideshow-0",
-          "static-slideshow-1"
-        ],
+        "block_order": ["static-slideshow-0", "static-slideshow-1"],
         "settings": {
           "show_slideshow": true,
           "enable_autoplay": false,
@@ -366,7 +359,7 @@
           "full_width_header": true,
           "menu": "gapstow-main-menu",
           "navigation_layout": "inside",
-          "desktop_logo": "shopify:\/\/shop_images\/Western_Star_Logo_PNG.png",
+          "desktop_logo": "shopify://shop_images/Western_Star_Logo_PNG.png",
           "desktop_logo_height": 57,
           "desktop_logo_position": "left",
           "mobile_logo_height": 30,
@@ -387,7 +380,7 @@
             "settings": {
               "icon": "icon-delivery-alt",
               "title": "FAST AND FREE DELIVERY",
-              "text": "<p>When you spend $100+<\/p>",
+              "text": "<p>When you spend $100+</p>",
               "link": ""
             }
           },
@@ -395,18 +388,17 @@
             "type": "highlight",
             "settings": {
               "icon": "icon-chat",
-              "title": "24\/7 CUSTOMER SUPPORT",
-              "text": "<p>Friendly 24\/7 customer support<\/p>",
+              "title": "24/7 CUSTOMER SUPPORT",
+              "text": "<p>Friendly 24/7 customer support</p>",
               "link": ""
             }
           },
           "ea26260a-e86b-4fc5-b1cd-a984281efda4": {
             "type": "highlight",
             "settings": {
-              "icon": "icon-wallet",
-              "image": "shopify:\/\/shop_images\/Untitled.png",
+              "icon": "icon-shield",
               "title": "MONEY BACK GUARANTEE",
-              "text": "<p>Refunds within 30 days of purchase<\/p>",
+              "text": "<p>Refunds within 30 days of purchase</p>",
               "link": ""
             }
           }
@@ -425,7 +417,8 @@
           "color": "#ffffff",
           "icon_color": "#ffffff",
           "dividers_color": "#064664",
-          "inner_background_color": "#064664"
+          "inner_background_color": "#064664",
+          "banner_button": false
         }
       },
       "filter-drawer": {
@@ -436,7 +429,7 @@
     "content_for_index": [],
     "blocks": {
       "1692329972272007824": {
-        "type": "shopify:\/\/apps\/zepto-product-personalizer\/blocks\/product_personalizer_main\/7411210d-7b32-4c09-9455-e129e3be4729",
+        "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_main/7411210d-7b32-4c09-9455-e129e3be4729",
         "disabled": false,
         "settings": {}
       }
@@ -553,9 +546,7 @@
               "settings": {}
             }
           },
-          "block_order": [
-            "1554839628889"
-          ],
+          "block_order": ["1554839628889"],
           "settings": {
             "sticky_header": false,
             "full_width_header": true,
@@ -618,9 +609,7 @@
               "settings": {}
             }
           },
-          "block_order": [
-            "1556742300890"
-          ],
+          "block_order": ["1556742300890"],
           "settings": {
             "sticky_header": false,
             "full_width_header": true,
@@ -780,9 +769,7 @@
               }
             }
           },
-          "block_order": [
-            "1556649125486"
-          ],
+          "block_order": ["1556649125486"],
           "settings": {
             "header_logo_layout": "left",
             "mobile_logo_height": 26,
@@ -918,9 +905,7 @@
               "settings": {}
             }
           },
-          "block_order": [
-            "1554839628889"
-          ],
+          "block_order": ["1554839628889"],
           "settings": {
             "sticky_header": false,
             "full_width_header": true,
@@ -1201,7 +1186,7 @@
       "preconnect_facebook": false,
       "preconnect_google": false,
       "product_slideshow_style": "natural",
-      "gallery_thumbnail_position": "below",
+      "gallery_thumbnail_position": "left",
       "quickshop_enable_hover_zoom": false,
       "product_enable_recently_viewed_products": true,
       "sections": {
@@ -1405,9 +1390,7 @@
               "settings": {}
             }
           },
-          "block_order": [
-            "1554839628889"
-          ],
+          "block_order": ["1554839628889"],
           "settings": {
             "full_width_header": true,
             "desktop_logo_height": 40,

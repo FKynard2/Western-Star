@@ -44,7 +44,7 @@
   data-product-gallery-aspect-ratio="{{ aspect_ratio }}"
   data-product-gallery-thumbnails="{{ thumbnail_position }}"
 >
-{% if thumbnail_position == 'left' %}
+ {% if thumbnail_position == 'left' %}
     {%
       include 'product-gallery-navigation'
       product: product,
@@ -53,7 +53,6 @@
       image_crop: image_crop,
     %}
   {% endif %}  
-   
 
   {%
     include 'product-gallery-viewer'
@@ -87,7 +86,7 @@
     </button>
   {% endif %}
 
-{% if thumbnail_position != 'left' %}
+ {% if thumbnail_position != 'left' %}
     {%
       include 'product-gallery-navigation'
       product: product,
@@ -96,5 +95,5 @@
       image_crop: image_crop,
       hover_zoom: hover_zoom,
     %}
-  {% endif %}
+  {% endif %} 
 </div>
