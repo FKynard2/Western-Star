@@ -12736,6 +12736,7 @@ em strong {
   .product-main {
     width: 47.5%;
     margin-left: 2.5%;
+    margin-top: 33px;
   }
   .layout--two-col-medium .product-main, .layout--two-col-large .product-main {
     width: 41.5%;
@@ -22346,7 +22347,7 @@ summary::after {
   background-color: #d20000 !important;
 }
 
-
+{% comment %} this section is for the combined section with product description and you may also like {% endcomment %}
 .split-section {
     display: flex;
     width: 100%;
@@ -22358,8 +22359,6 @@ summary::after {
   width:100%;
   margin:0;
 }
-
-
 
 section > ul > .productgrid--item .productitem--action .product-item-btn {
   display:none;
@@ -22381,4 +22380,77 @@ section > .product-row {
   font-weight: 800;
   color: #383838;
   font-family:"Work Sans";
+}
+
+.shopify-section > .breadcrumbs-container {
+  display: none !important;
+}
+
+
+{% comment %} this section is for the product form {% endcomment %}
+.button-tertiary {
+    width: 37%;
+    border-radius: 8px;
+    font-size: 26px;
+    background: white;
+    border: 3px solid #f7b102;
+    color: #f7b102;
+    margin-left: 100px;
+}
+
+{% comment %} this is for the quanity buttons {% endcomment %}
+
+.qtydiv label {
+  display: block;
+  margin-bottom: 12px;
+  letter-spacing: 2.8px;
+  color: #747a7b;
+}
+
+.qtybox {
+    border: 1px solid black;
+    padding: 0 7px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    height: 46px;
+    width: 205px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.qtydiv .btnqty {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  font-size: 25px;
+  padding: 5px;
+  line-height: 5px;
+}
+
+.qtydiv .btnqty.qtyminus {
+  margin-right: 8px;
+}
+
+.qtydiv .btnqty.qtyplus {
+  margin-left: 8px;
+}
+
+.qtydiv .quantity-input {
+    border: none;
+    padding: 8px;
+    text-align: center;
+    width: 70px;
+    outline: none;
+    display: inline-block;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    height: 44px;
+}
+
+.qtydiv {
+    display: flex;
+    padding-right: 15px;
+    padding-top: 10px;
+    align-items: center;
 }

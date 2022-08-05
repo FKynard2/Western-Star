@@ -36727,3 +36727,19 @@ if (checkPolyfills.length) {
 /******/ })()
 ;
 //# sourceMappingURL=superstore.js.map?1652899789683
+
+
+// this is for the quanity selector with the plus minus button
+
+$('.qtybox .btnqty').on('click', function(){
+  var qty = parseInt($(this).parent('.qtybox').find('.quantity-input').val());
+  if($(this).hasClass('qtyplus')) {
+    qty++;
+  }else {
+    if(qty > 1) {
+      qty--;
+    }
+  }
+  qty = (isNaN(qty))?1:qty;
+  $(this).parent('.qtybox').find('.quantity-input').val(qty);
+}); 

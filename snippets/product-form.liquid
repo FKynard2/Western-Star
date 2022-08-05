@@ -55,6 +55,17 @@
   {% endif %}
 
   <div class="product-form--atc">
+     {% comment %} quantity selector with plus and minus {% endcomment %}
+ <div class="qtydiv">
+  <label for="Quantity" class="quantity-selector">Quantity</label>
+  <div class="qtybox">
+    <span class="btnqty qtyminus icon icon-minus">-</span>
+    <input type="text" id="quantity" name="quantity" value="1" min="1" class="quantity-selector quantity-input" readonly="">
+    <span class="btnqty qtyplus icon icon-plus">+</span>
+  </div>
+</div>
+
+{% comment %}  
     {% if show_quantity %}
       <div class="product-form--atc-qty form-fields--qty" data-quantity-wrapper>
         <div class="form-field form-field--qty-select">
@@ -105,9 +116,9 @@
     {% else %}
       <input name="quantity" type="hidden" value="1">
     {% endif %}
-
+{% endcomment %}
     <button
-      class="product-form--atc-button {% unless selected_variant.available %}disabled{% endunless %}"
+      class="product-form--atc-button button-tertiary {% unless selected_variant.available %}disabled{% endunless %}"
       type="submit"
       {% unless selected_variant.available %}disabled{% endunless %}
       data-product-atc
