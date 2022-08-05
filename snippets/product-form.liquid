@@ -53,7 +53,7 @@
         inventory_quantity: selected_variant.inventory_quantity
       %}
   {% endif %}
-
+{% if show_quantity %}
   <div class="product-form--atc">
      {% comment %} quantity selector with plus and minus {% endcomment %}
  <div class="qtydiv">
@@ -64,7 +64,7 @@
     <span class="btnqty qtyplus icon icon-plus">+</span>
   </div>
 </div>
-
+{% endif %}
 {% comment %}  
     {% if show_quantity %}
       <div class="product-form--atc-qty form-fields--qty" data-quantity-wrapper>

@@ -217,8 +217,8 @@
         "settings": {
           "mobile_alignment": "left",
           "payment_icons": false,
-          "show_locale_selector": false,
-          "show_currency_selector": false,
+          "show_locale_selector": false, 
+          "show_currency_selector": true,
           "additional_menu": "footer",
           "logo_image": "shopify:\/\/shop_images\/Western_Star_Logo_PNG_1.png",
           "footer-address": "<p>206 Clary Ave, San Gabriel, CA 917                               United States<\/p><p>sales@championball.com +1 626-292-7880<\/p>",

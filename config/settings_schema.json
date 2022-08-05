@@ -1898,5 +1898,112 @@
         "info": "Improves page load speed for Google Analytics users."
       }
     ]
+  },
+  {
+    "name": {
+      "cs": "Formát měny",
+      "da": "Valutaformat",
+      "de": "Währungsformat",
+      "en": "Currency format",
+      "es": "Formato de moneda",
+      "fi": "Valuutan muoto",
+      "fr": "Format de devise",
+      "it": "Formato valuta",
+      "ja": "通貨形式",
+      "ko": "통화 형식",
+      "nb": "Valutaformat",
+      "nl": "Valuta-indeling",
+      "pl": "Format waluty",
+      "pt-BR": "Formato de moeda",
+      "pt-PT": "Formato de moeda",
+      "sv": "Valutaformat",
+      "th": "รูปแบบสกุลเงิน",
+      "tr": "Para birimi biçimi",
+      "vi": "Định dạng đơn vị tiền tệ",
+      "zh-CN": "货币格式",
+      "zh-TW": "幣別格式"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "cs": "Kódy měn",
+          "da": "Valutakoder",
+          "de": "Währungscodes",
+          "en": "Currency codes",
+          "es": "Códigos de moneda",
+          "fi": "Valuuttakoodit",
+          "fr": "Codes de devise",
+          "it": "Codici valuta",
+          "ja": "通貨コード",
+          "ko": "통화 코드",
+          "nb": "Valutakoder",
+          "nl": "Valutacodes",
+          "pl": "Kody walut",
+          "pt-BR": "Códigos de moeda",
+          "pt-PT": "Códigos de moeda",
+          "sv": "Valutakoder",
+          "th": "รหัสสกุลเงิน",
+          "tr": "Para birimi kodları",
+          "vi": "Mã đơn vị tiền tệ",
+          "zh-CN": "货币代码",
+          "zh-TW": "幣別代碼"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": {
+          "cs": "Košík a ceny na pokladně vždy zahrnují kódy měn. Příklad: 1,00 USD ($)",
+          "da": "Priser i indkøbskurv og betalingsproces viser altid valutakoder. Eksempel: 1,00 USD.",
+          "de": "Warenkorb- und Checkout-Preise zeigen immer Währungscodes an. Beispiel: 1,00 USD.",
+          "en": "Cart and checkout prices always show currency codes. Example: $1.00 USD.",
+          "es": "Los precios en el carrito y la pantalla de pago siempre muestran códigos de moneda. Ejemplo: USD 1,00.",
+          "fi": "Ostoskorin ja kassan hinnat näyttävät aina valuuttakoodit. Esimerkki: $1.00 USD.",
+          "fr": "Le panier et les prix au moment du paiement indiquent toujours les codes de devise. Exemple : 1 EUR.",
+          "it": "I prezzi del carrello e del check-out mostrano sempre i codici valuta. Esempio: 1,00 EUR.",
+          "ja": "カート価格とチェックアウト価格にはいつも通貨コードが表示されます。例: $1.00 USD。",
+          "ko": "카트 및 결제 가격에는 항상 통화 코드가 표시됩니다. 예: $1.00(USD)",
+          "nb": "Handlekurv- og kassepriser viser alltid valutakoder. Eksempel: 1,00 USD.",
+          "nl": "Prijzen in winkelwagen en bij checkout tonen altijd de valutacodes. Voorbeeld: $1,00 USD.",
+          "pl": "Ceny w koszyku i kasie zawsze zawierają kody walut. Przykład: 1,00 USD.",
+          "pt-BR": "Os preços do carrinho e do checkout sempre mostram os códigos de moeda. Exemplo: 1,00 USD.",
+          "pt-PT": "Os preços de finalização da compra e carrinho mostram sempre os códigos de moeda. Exemplo: 1,00 USD.",
+          "sv": "Priser i varukorgen och kassan visar alltid valutakoder. T.ex. 1,00 USD.",
+          "th": "ราคาในตะกร้าสินค้าและการชำระเงินจะแสดงรหัสสกุลเงินเสมอ ตัวอย่าง: $1.00 USD",
+          "tr": "Sepet ve ödeme ücretleri her zaman para birimi kodlarını gösterir. Örnek: 1,00 USD.",
+          "vi": "Giá giỏ hàng và giá thanh toán luôn hiển thị mã đơn vị tiền tệ. Ví dụ: 1,00 USD.",
+          "zh-CN": "购物车和结账价格将始终显示货币代码。示例：1.00 USD。",
+          "zh-TW": "購物車和結帳價格一律顯示幣別代碼。例如：$1.00 美元。"
+        }
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": {
+          "cs": "Zobrazit kódy měn",
+          "da": "Vis valutakoder",
+          "de": "Währungscodes anzeigen",
+          "en": "Show currency codes",
+          "es": "Mostrar códigos de moneda",
+          "fi": "Näytä valuuttakoodit",
+          "fr": "Afficher les codes de devise",
+          "it": "Mostra i codici valuta",
+          "ja": "通貨コードを表示する",
+          "ko": "통화 코드 표시",
+          "nb": "Vis valutakoder",
+          "nl": "Valutacodes tonen",
+          "pl": "Pokaż kody walut",
+          "pt-BR": "Mostrar códigos de moeda",
+          "pt-PT": "Mostrar códigos de moeda",
+          "sv": "Visa valutakoder",
+          "th": "แสดงรหัสสกุลเงิน",
+          "tr": "Para birimi kodlarını göster",
+          "vi": "Hiển thị mã đơn vị tiền tệ",
+          "zh-CN": "显示货币代码",
+          "zh-TW": "顯示幣別代碼"
+        },
+        "default": true
+      }
+    ]
   }
 ]
