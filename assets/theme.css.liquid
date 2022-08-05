@@ -12660,6 +12660,7 @@ em strong {
 
 .product--container {
   margin-top: {{ settings.type_size_base | times: 1.25 | divided_by: 16.0 | append: 'rem' }};
+  margin-bottom: -70px;
 }
 @media screen and (min-width: 720px) {
   .product--container {
@@ -22285,4 +22286,99 @@ summary::after {
 
 .footer-address{
   max-width:135px; 
+}
+
+
+{% comment %} For FAQ page {% endcomment %}
+.faq {
+    overflow: hidden;
+    width: 96%;
+    margin-left: 40px;
+    border-bottom: 1px solid #80808047;
+    border-top: 1px solid #808080a6;
+} 
+
+/* hide checkbox */
+.faq .question-toggle {
+  display: none;
+}
+
+/* style the label */
+.faq .question-label {
+    background-color: #fff;
+    display: grid;
+    padding: 1em;
+    font-weight: 700;
+    color: #000!important;
+    grid-template-columns: 20% 0%;
+    grid-template-rows: 50% 50%;
+}
+.faq .question-label:hover {
+  background-color: #ffffff;
+}
+.faq .question-toggle:checked ~ .question-label {
+  background-color: #ffffff;
+}
+.faq .question-label::after {
+  content: '\+';
+  transition: all 0.4s;
+}
+.faq .question-toggle:checked ~ .question-label::after {
+  transform: rotate(45deg);
+}
+
+/* only show text when checkbox is checked */
+.faq .answer {
+  background-color: white;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.4s;
+  padding: 0 1em;
+}
+.faq .question-toggle:checked ~ .answer {
+  max-height: 100vh;
+  padding: 1em;
+}
+.margin-top {
+  margin-top: 20px;
+}
+.jdgm-histogram__bar-content {
+  background-color: #d20000 !important;
+}
+
+
+.split-section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.product-section-combine{
+  width:100%;
+  margin:0;
+}
+
+
+
+section > ul > .productgrid--item .productitem--action .product-item-btn {
+  display:none;
+}
+
+section > ul > .productgrid--item {
+  width: 220px !important;
+}
+
+section > ul > .productgrid--item .productitem--info {
+  width: 100%;
+}
+
+section > .product-row {
+  justify-content: space-between;
+}
+.title-heading-section{
+  font-size: 36px;
+  font-weight: 800;
+  color: #383838;
+  font-family:"Work Sans";
 }

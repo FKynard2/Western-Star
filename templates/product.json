@@ -21,6 +21,12 @@
           "type": "price",
           "settings": {}
         },
+        "6d3f348a-9fdc-417c-a0d7-24d03247d906": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
         "form": {
           "type": "form",
           "settings": {}
@@ -32,6 +38,7 @@
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -40,6 +47,7 @@
         "vendor",
         "rating",
         "price",
+        "6d3f348a-9fdc-417c-a0d7-24d03247d906",
         "form",
         "share",
         "description"
@@ -47,19 +55,81 @@
       "settings": {
         "show_breadcrumbs": true,
         "layout": "layout--two-col-medium",
-        "show_dcb": true,
+        "show_dcb": false,
         "product_cart_redirect": false,
-        "gallery_aspect_ratio": "natural",
+        "gallery_aspect_ratio": "square",
         "gallery_image_crop": false,
-        "gallery_thumbnail_position": "below",
+        "gallery_thumbnail_position": "left",
         "gallery_video_autoplay": true,
         "gallery_video_looping": true,
         "gallery_hover_zoom": "disabled",
         "gallery_click_to_zoom": "always"
       }
     },
+    "1659641328c7a2f364": {
+      "type": "description-accordian",
+      "blocks": {
+        "fa9e63cb-9067-492c-ae0a-391b8dd6e671": {
+          "type": "Product_description",
+          "settings": {
+            "title": "Product Description",
+            "question": "Product Description",
+            "description": ""
+          }
+        },
+        "18168ebb-0bef-4390-af45-5a35e3733886": {
+          "type": "Product_description",
+          "settings": {
+            "title": "Specifications",
+            "question": "Specifications",
+            "description": ""
+          }
+        },
+        "fb6c4b27-3b39-4dcc-9108-9641b3cdb9fa": {
+          "type": "Product_description",
+          "settings": {
+            "title": "Materials + Care",
+            "question": "Materials + Care",
+            "description": ""
+          }
+        },
+        "b09fff4d-309e-4ab7-91d3-0a324c2f83d5": {
+          "type": "Product_description",
+          "settings": {
+            "title": "Sizing",
+            "question": "Sizing",
+            "description": ""
+          }
+        },
+        "1fbf8cdf-eb14-4acc-8c8f-c2a6f731b835": {
+          "type": "Product_description",
+          "settings": {
+            "title": "Shipping & Returns",
+            "question": "Shipping & Returns",
+            "description": ""
+          }
+        },
+        "73cf50fe-7ea7-43db-8a00-e05f183b9aa1": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "fa9e63cb-9067-492c-ae0a-391b8dd6e671",
+        "18168ebb-0bef-4390-af45-5a35e3733886",
+        "fb6c4b27-3b39-4dcc-9108-9641b3cdb9fa",
+        "b09fff4d-309e-4ab7-91d3-0a324c2f83d5",
+        "1fbf8cdf-eb14-4acc-8c8f-c2a6f731b835",
+        "73cf50fe-7ea7-43db-8a00-e05f183b9aa1"
+      ],
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like"
+      }
+    },
     "recommendations": {
       "type": "static-product-recommendations",
+      "disabled": true,
       "settings": {
         "show_product_recommendations": true,
         "product_recommendations_heading": "You may also like"
@@ -95,6 +165,7 @@
   },
   "order": [
     "main",
+    "1659641328c7a2f364",
     "recommendations",
     "product-reviews",
     "recently-viewed",

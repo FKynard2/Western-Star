@@ -1,0 +1,162 @@
+
+
+<div class='split-section'>
+    <section style="width:100%"> 
+        {% for block in section.blocks %}
+        {% if block.type == 'Product_description' %}
+        <div class="faq">
+                <div class="question">
+                    <input type="checkbox" id="question-{{ forloop.index }}" class="question-toggle">
+                    <label for="question-{{ forloop.index }}" class="question-label">{{block.settings.question}}</label>
+    
+                    <div class="answer">{{block.settings.description}}{{ product.description }}</div>
+                </div>
+            </div>
+            {% elsif block.type == 'headline' %}
+                <h2 class='margin-top'>{{block.settings.title}}</h2>
+            {% endif %}
+        {% endfor %}
+    </section>
+    
+    {% if section.settings.show_product_recommendations %}
+      {% assign product_limit = 3 %}
+    
+      <script
+        type="application/json"
+        data-section-type="static-product-recommendations"
+        data-section-id="{{ section.id }}"
+        data-section-data
+      >
+        {
+          "settings": {
+            "limit": {{ product_limit }}
+          },
+          "productId": {{ product.id | json }}
+        }
+      </script>
+    
+      <section
+        class="product-section--container product-row--container product-recommendations--container product-section-combine"
+        data-html
+        data-product-recommendations
+      >
+        {% if recommendations.products_count > 0 %}
+          <h2 class="product-section--title product-recommendations--title title-heading-section">
+            {{ section.settings.product_recommendations_heading }}:
+          </h2>
+    
+          <ul
+            class="
+              product-section--content
+              product-row
+              {% if settings.enable_product_card_spacing == false %}product-row--no-spacing{% endif %}
+            "
+            data-product-row
+          >
+            {% for product in recommendations.products limit: product_limit %}
+              {%
+                include 'product-grid-item',
+                product: product
+              %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </section>
+    {% endif %}
+</div>
+
+
+{% schema %}
+    {
+        "name": "Accordian",
+        "settings": [
+        {
+            "type": "text",
+            "label": "heading for description",
+            "id": "heading"
+        }
+     
+        ],
+
+          "name": "Product recommendations",
+            "class": "product-recommendations--section",
+            "settings": [
+              {
+                "type": "checkbox",
+                "id": "show_product_recommendations",
+                "label": "Show dynamic recommendations",
+                "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+                "default": true
+              },
+              {
+                "type": "text",
+                "id": "product_recommendations_heading",
+                "label": "Heading",
+                "default": "You may also like:"
+              }
+            ],
+
+
+        "blocks": [
+            {
+                "type": "Product_description",
+                "name": "Enter text here",
+                "settings": [
+                    {
+                        "type": "text",
+                        "label": "title (internal only)",
+                        "id": "title"
+                    }, 
+                    {
+                        "type": "text",
+                        "label": "Product specification Name",
+                        "id": "question"
+                    }, 
+                    {
+                        "type": "richtext",
+                        "label": "Specifications",
+                        "id": "description" 
+                    }
+
+                ]
+
+            },
+            {
+                "type": "description",
+                "name": "Description"
+            }
+        ],
+      "presets": [
+    {
+      "name": "Accordian",
+      "category": "Product Description",
+      "blocks": [
+        {
+          "type": "description"
+        },
+        {
+          "type": "Product_description"
+        },
+        {
+          "type": "Product_description"
+        },
+        {
+          "type": "Product_description"
+        },
+        {
+          "type": "Product_description"
+        },
+        {
+          "type": "Product_description"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    "index",
+    "product",
+    "page",
+    "collection"
+  ]
+    }
+{% endschema %}
