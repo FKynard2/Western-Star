@@ -24,6 +24,7 @@
   "
   data-gallery-viewer
 >
+ 
   {% for media in product.media %}
     <figure
       class="
@@ -32,7 +33,7 @@
       "
       tabindex="-1"
       {% if selected_media.id != media.id %}
-        aria-hidden="true"
+        aria-hidden="true" 
       {% else %}
         aria-hidden="false"
       {% endif %}

@@ -30,7 +30,9 @@
         },
         "view-product-link": {
           "type": "view-product-link",
-          "settings": {}
+          "settings": {
+            "text": "View full details"
+          }
         },
         "share": {
           "type": "share",
@@ -47,7 +49,16 @@
         "view-product-link",
         "share"
       ],
-      "settings": {}
+      "settings": {
+        "quickshop_show_dcb": true,
+        "quickshop_product_cart_redirect": false,
+        "quickshop_gallery_aspect_ratio": "natural",
+        "quickshop_gallery_image_crop": false,
+        "quickshop_gallery_thumbnail_position": "below",
+        "quickshop_gallery_video_autoplay": true,
+        "quickshop_gallery_video_looping": true,
+        "quickshop_gallery_hover_zoom": "disabled"
+      }
     }
   },
   "order": [
