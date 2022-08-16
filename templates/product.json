@@ -63,7 +63,7 @@
         "gallery_video_autoplay": true,
         "gallery_video_looping": true,
         "gallery_hover_zoom": "disabled",
-        "gallery_click_to_zoom": "always"
+        "gallery_click_to_zoom": "disabled"
       }
     },
     "1659641328c7a2f364": {
@@ -83,7 +83,13 @@
       ],
       "settings": {
         "show_product_recommendations": true,
-        "product_recommendations_heading": "You may also like"
+        "product_recommendations_heading": "You may also like",
+        "question_color": "#ffffff",
+        "text_color": "#000000",
+        "hover_color": "#ffffff",
+        "accordian_width": 96,
+        "text_before": "+",
+        "text_after": "-"
       }
     },
     "recommendations": {

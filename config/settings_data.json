@@ -76,9 +76,10 @@
     "type_size_base": 15,
     "type_heading": "montserrat_n5",
     "type_heading_capitalize": true,
-    "type_section": "montserrat_n5",
-    "type_section_heading_size": 92,
+    "type_section": "montserrat_n7",
+    "type_section_heading_size": 140,
     "type_section_capitalize": false,
+    "type_section_spacing": 5,
     "type_body": "work_sans_n4",
     "type_body_bold": "slate_n4",
     "type_body_enable_bold": false,
@@ -224,7 +225,7 @@
           "show_currency_selector": true,
           "additional_menu": "footer",
           "logo_image": "shopify:\/\/shop_images\/Western_Star_Logo_PNG_1.png",
-          "footer-address": "<p>206 Clary Ave, San Gabriel, CA 917                               United States<\/p><p>sales@championball.com +1 626-292-7880<\/p>",
+          "footer-address": "<p>206 Clary Ave, <br\/>San Gabriel, CA <br\/>91776 United States<\/p><p>sales@championball.com +1 626-292-7880<\/p>",
           "small_text": ""
         }
       },

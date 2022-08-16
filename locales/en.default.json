@@ -51,7 +51,8 @@
     "newsletter": {
       "subscribe": "JOIN",
       "placeholder": "Your email address",
-      "success": "Thanks for signing up!"
+      "success": "Thanks for signing up!",
+      "subscribe_2": "Subscribe"
     },
     "share_buttons": {
       "title": "Share this:",
@@ -520,7 +521,7 @@
     "dynamic-newsletter": {
       "form": {
         "placeholder": "Your email address",
-        "submit": "JOIN",
+        "submit": "Subscribe",
         "success": "Thanks for subscribing!"
       }
     }

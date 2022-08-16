@@ -3,9 +3,72 @@
     "main": {
       "type": "static-page",
       "settings": {}
+    },
+    "1660609541e198dd3d": {
+      "type": "description-accordian",
+      "blocks": {
+        "16606095412c042db1-0": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "16606095412c042db1-1": {
+          "type": "Product_description",
+          "settings": {
+            "title": "",
+            "question": "",
+            "description": ""
+          }
+        },
+        "16606095412c042db1-2": {
+          "type": "Product_description",
+          "settings": {
+            "title": "",
+            "question": "",
+            "description": ""
+          }
+        },
+        "16606095412c042db1-3": {
+          "type": "Product_description",
+          "settings": {
+            "title": "",
+            "question": "",
+            "description": ""
+          }
+        },
+        "16606095412c042db1-4": {
+          "type": "Product_description",
+          "settings": {
+            "title": "",
+            "question": "",
+            "description": ""
+          }
+        },
+        "16606095412c042db1-5": {
+          "type": "Product_description",
+          "settings": {
+            "title": "",
+            "question": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "16606095412c042db1-0",
+        "16606095412c042db1-1",
+        "16606095412c042db1-2",
+        "16606095412c042db1-3",
+        "16606095412c042db1-4",
+        "16606095412c042db1-5"
+      ],
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like:"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1660609541e198dd3d"
   ]
 }

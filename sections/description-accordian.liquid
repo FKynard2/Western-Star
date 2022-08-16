@@ -1,4 +1,31 @@
+{% style %}
+ #shopify-section-{{section.id}} .faq .question-label {
+    background: {{ section.settings.question_color }};
+  }
+ #shopify-section-{{section.id}} .faq .question-label {
+    color: {{ section.settings.text_color }} !important;
+  }
+#shopify-section-{{section.id}} .faq .question-label:hover {
+  background-color: {{ section.settings.hover_color}};
+}
 
+.faq {
+    overflow: hidden;
+    width: {{section.settings.accordian_width | append: '%'}};
+    margin: 0 40px;
+    border-bottom: 1px solid #80808047;
+    border-top: 1px solid #808080a6;
+} 
+
+.faq .question-label::after {
+  content: '{{section.settings.text_before}}';
+  transition: all 0.4s;
+}
+
+.faq .question-toggle:checked ~ .question-label::after {
+  content: '{{section.settings.text_after}}'
+}
+{% endstyle %}
 
 <div class='split-section'>
     <section style="width:100%"> 
@@ -93,7 +120,47 @@
                 "id": "product_recommendations_heading",
                 "label": "Heading",
                 "default": "You may also like:"
-              }
+              },
+              {
+                "type": "color",
+                "id": "question_color",
+                "label": "Question Background",
+                "default": "#064664"
+              },
+              {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text",
+                "default": "#f7b102"
+              },
+              {
+                "type": "color",
+                "id": "hover_color",
+                "label": "Background Hover",
+                "default": "#ffffff"
+              },
+              {
+              "type": "range",
+              "id": "accordian_width",
+              "min": 50,
+              "max": 100,
+              "step": 1,
+              "unit": "%",
+              "label": "Accordian width",
+              "default": 96
+            },
+            {
+              "type": "text",
+              "id": "text_before",
+              "label": "Show label",
+              "default": "\+"
+            },
+            {
+              "type": "text",
+              "id": "text_after",
+              "label": "Show Label After",
+              "default": "\-"
+            }
             ],
 
 
@@ -118,12 +185,19 @@
                         "id": "description" 
                     }
 
-                ]
+                ] 
 
             },
             {
-                "type": "description",
-                "name": "Description"
+                "type": "headline",
+                "name": "Headline",
+                "settings": [
+                  {
+                    "type": "text",
+                    "label": "Headline for Questions",
+                    "id": "title"
+                  }
+                ]
             }
         ],
       "presets": [
@@ -132,7 +206,7 @@
       "category": "Product Description",
       "blocks": [
         {
-          "type": "description"
+          "type": "headline"
         },
         {
           "type": "Product_description"

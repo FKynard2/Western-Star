@@ -28,6 +28,7 @@
     {% endcase %}
   {% endif %}
 
+
   <div
     class="product-gallery--navigation loading"
     data-gallery-navigation
@@ -53,14 +54,16 @@
       %}
     </button>
     <div
-      class="gallery-navigation--scroller"
+      class="gallery-navigation--scroller gallery gallery-nav"
       data-gallery-scroller
+      data-flickity='{"contain": true,  "sync":".product-gallery--media-thumbnail[data-gallery-selected=true] ", "pageDots": false }'   
     >
     {% for media in product.media %}
       <button
         class="
           product-gallery--media-thumbnail
           product-gallery--{{ media.media_type }}-thumbnail
+          
         "
         type="button"
         tab-index="0"
@@ -91,7 +94,7 @@
         %}
       </button>
     {% endfor %}
-    </div>
+  
+ </div>
   </div>
 {% endif %}
- 

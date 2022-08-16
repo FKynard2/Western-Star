@@ -9440,11 +9440,9 @@
                         i > 1 &&
                           toSelector(
                             // If the preceding token was a descendant combinator, insert an implicit any-element `*`
-                            tokens
-                              .slice(0, i - 1)
-                              .concat({
-                                value: tokens[i - 2].type === ' ' ? '*' : ''
-                              })
+                            tokens.slice(0, i - 1).concat({
+                              value: tokens[i - 2].type === ' ' ? '*' : ''
+                            })
                           ).replace(rtrim, '$1'),
                         matcher,
                         i < j && matcherFromTokens(tokens.slice(i, j)),
@@ -29964,6 +29962,9 @@ const RULES = `
         this.selectedThumb = this.thumbContainer.querySelector(
           '[data-gallery-selected="true"]'
         );
+        this.selectedThumb =
+          this.thumbContainer.getElementsByClassName('.is-selected');
+
         this.events = new EventHandler /* default */.Z(); // Set up options for initializing PhotoSwipe
 
         const photoswipeSlides = [];
@@ -30203,7 +30204,8 @@ const RULES = `
           figure: this.viewer.querySelector('[data-gallery-selected="true"]'),
           thumbnail: this.navigation.querySelector(
             '[data-gallery-selected="true"]'
-          )
+          ),
+          button: this.viewer.querySelector('[data-gallery-selected="true"]')
         };
         this.models = {};
         this.videos = {};
@@ -30213,6 +30215,11 @@ const RULES = `
         this.updateSlideHeight = this._setSlideHeight.bind(this);
         this._setupSelectedVideo = this._setupSelectedVideo.bind(this);
         const features = [];
+       
+       
+            
+        
+            
 
         if (this.el.querySelector('[data-media-type="video"]')) {
           Promise.all([
@@ -30466,6 +30473,7 @@ const RULES = `
 
       _selectMediaByIndex(index) {
         const figure = this.figures[index];
+
         this.selected.figure.dataset.gallerySelected = false;
         this.selected.figure.setAttribute('aria-hidden', true);
         this.selected.figure = figure;
@@ -30529,6 +30537,14 @@ const RULES = `
         }
 
         this._adjustGalleryPositioning();
+      }
+
+      _createPrevNextButtons() {
+        const cButtons = document.querySelectorAll('[data-carousel-button]');
+
+        cButtons.forEach((button) => {
+          button.addEventListener('click', () => {});
+        });
       }
 
       _setupSelectedVideo() {
@@ -30627,7 +30643,7 @@ const RULES = `
           initialIndex: parseInt(this.selected.figure.dataset.galleryIndex, 10),
           lazyLoad: false,
           percentPosition: false,
-          prevNextButtons: false,
+          prevNextButtons: true,
           pageDots: false,
           selectedAttraction: 0.1,
           setGallerySize: false,
@@ -30872,7 +30888,9 @@ const RULES = `
           selectGalleryIndex: (index) => this._selectMediaByIndex(index)
         });
       }
-    } // CONCATENATED MODULE: ./source/scripts/helpers/PaymentTerms.js
+    }
+
+    // CONCATENATED MODULE: ./source/scripts/helpers/PaymentTerms.js
     class PaymentTerms {
       constructor(el) {
         this._el = el;
@@ -39463,7 +39481,7 @@ const RULES = `
         this.takeoverCancel.removeEventListener('click', this._closeSearch);
         window.removeEventListener('resize', this.windowResize);
         window.removeEventListener('load', this._adjustSizeAndPlacement);
-        window.removeEventListener('keydown', this._closeEsc);
+        window.removeEventListener('keydown', this._closeEsc);_bindEvents()
       }
     } // CONCATENATED MODULE: ./source/scripts/components/navigation/NavMobileSubMenus.js
     class NavMobileSubMenus {
@@ -40713,4 +40731,7 @@ $('.qtybox .btnqty').on('click', function () {
   qty = isNaN(qty) ? 1 : qty;
   $(this).parent('.qtybox').find('.quantity-input').val(qty);
 });
-  
+
+
+
+
