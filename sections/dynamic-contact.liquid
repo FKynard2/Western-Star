@@ -1,0 +1,208 @@
+
+{% style %}
+  .background{
+   height: 75vh;
+  }
+  .page-content, .center-image-vh{
+    height:14vh !important;
+  }
+  .btn-full-width{
+    width: 100% !important; 
+  }
+
+   #shopify-section-{{section.id}} .headline-text  {
+    color:{{section.settings.headline_color}}; 
+    height: 24vh;
+    padding-top: 40%;  
+  }
+ 
+{% endstyle %}
+
+
+<script
+  type="application/json"
+  data-section-type="dynamic-newsletter"
+  data-section-id="{{ section.id }}"
+>
+</script>
+<section  
+      class="image-with-text-background background"
+      {% if section.settings.image != blank %}
+        {% capture background_style %}
+          {% if section.settings.section_height == 'original' %}
+            padding-bottom: {{- 100 | divided_by: section.settings.image.aspect_ratio -}}%;
+          {% endif %}
+          background-position: {{ section.settings.position }};
+        {% endcapture %}
+
+      
+
+        {%
+          include 'rimg',
+          img: section.settings.image,
+          size: '1400x',
+          crop: crop,
+          style: background_style,
+          lazy: settings.lazy_load,
+          background: true
+        %}
+      {% endif %} >
+
+    <article class="site-page" data-template-page data-template-contact> 
+    
+      <header class="page-masthead center-image-vh">
+      <div class="page-content page-content-contact"> 
+        {% form 'contact' %}
+          {% assign has_message = false %}
+    
+          {% if form.errors != blank %}
+            {% assign has_message = true %}
+            {% assign message_type = 'error' %}
+          {% endif %}
+    
+          {% if form.posted_successfully? %}
+            {% assign has_message = true %}
+            {% assign message_type = 'success' %}
+          {% endif %}
+    
+          {% if has_message %}
+            <div class="contact-message message--{{ message_type }}">
+              {% case message_type %}
+                {% when 'success' %}
+                  <p>
+                    {{ 'contact.form.post_success' | t }}
+                  </p>
+                {% when 'error' %}
+                  {{ form.errors | default_errors }}
+              {% endcase %}
+            </div>
+          {% endif %}
+    
+            <h2 class="headline-text">
+              {{ section.settings.headline}}
+            </h2>
+
+            <div class="form-field ">
+              {% assign value = '' %}
+              {%- if form.name -%}
+                {% assign value = form.name %}
+              {%- elsif customer -%}
+                {% assign value = customer.name %}
+              {%- endif -%}
+    
+              <input
+                class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
+                id="contact_name"
+                name="contact[name]"
+                type="text"
+                value="{{ value }}">
+    
+              <label class="form-field-title" for="contact_name">
+                {{ 'contact.form.name' | t }}
+              </label>
+            </div>
+    
+            <div class="form-field ">
+              {% assign value = '' %}
+              {%- if form.email -%}
+                {% assign value = form.email %}
+              {%- elsif customer -%}
+                {% assign value = customer.email %}
+              {%- endif -%}
+              <input
+                class="form-field-input form-field-text {% if form.errors contains 'email' %}form-field-error{% endif %}"
+                id="contact_email"
+                name="contact[email]"
+                type="text"
+                value="{{ value }}"
+                autocorrect="off"
+                autocapitalize="off">
+    
+              <label class="form-field-title" for="contact_email">
+                {{ 'contact.form.email' | t }}
+              </label>
+            </div>
+          
+    
+          <div class="form-field">
+            {% assign value = '' %}
+            {%- if form.phone -%}
+              {% assign value = form.phone %}
+            {%- elsif customer -%}
+              {% assign value = customer.phone %}
+            {%- endif -%}
+    
+           
+          </div>
+    
+          <div class="form-field">
+            {% assign value = '' %}
+            {%- if form.body -%}
+              {% assign value = form.body %}
+            {%- endif -%}
+            <textarea
+              class="form-field-input form-field-textarea {% if form.errors contains 'body' %}form-field-error{% endif %}"
+              id="contact_message"
+              name="contact[message]">{{ value }}</textarea>
+    
+            <label class="form-field-title" for="contact_body">
+              {{ 'contact.form.message' | t }}
+            </label>
+          </div>
+    
+          <div class="form-action-row">
+            <button class="button-primary contact-form-button btn-full-width" type="submit">
+              {{ 'contact.form.send' | t }}
+            </button>
+          </div>
+        {% endform %}
+      </div>
+    </article> 
+</section>
+
+{% schema %}
+{
+  "name": "Contact us",
+  "class": "dynamic-contact-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "headline"
+    },
+  {
+  "type": "color",
+  "id": "headline_color",
+  "label": "Headline Title",
+  "default": "#ffffff"
+}
+    
+  ],
+  "presets": [
+    {
+      "name": "Contact Us",
+      "category": "Promotional"
+    }
+  ],
+  "locales": {
+    "en": {
+      "form": {
+        "placeholder": "Your email address",
+        "submit": "Subscribe",
+        "success": "Thanks for subscribing!"
+      }
+    }
+  },
+  "templates": [
+    "index",
+    "product",
+    "page"
+  ]
+}
+
+{% endschema %}

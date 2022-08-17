@@ -50,10 +50,17 @@
         "section_spacing_mobile": 36,
         "content_spacing": 0
       }
+    },
+    "1660679569e6cd27cf": {
+      "type": "dynamic-contact",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/donnycocacola--3pxa1O1zoI-unsplash_1_1.png"
+      }
     }
   },
   "order": [
     "main",
-    "1660674075241e02d1"
+    "1660674075241e02d1",
+    "1660679569e6cd27cf"
   ]
 }
