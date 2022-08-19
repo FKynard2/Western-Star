@@ -12,7 +12,7 @@
           "settings": {
             "img_desktop": "shopify:\/\/shop_images\/basketball.jpg",
             "img_position_desktop": "left",
-            "img_width_desktop": 50,
+            "img_width_desktop": 40,
             "img_height_desktop": "natural",
             "custom_height_desktop": 440,
             "img_mobile": "shopify:\/\/shop_images\/basketball.jpg",
@@ -54,7 +54,9 @@
     "1660679569e6cd27cf": {
       "type": "dynamic-contact",
       "settings": {
-        "image": "shopify:\/\/shop_images\/donnycocacola--3pxa1O1zoI-unsplash_1_1.png"
+        "image": "shopify:\/\/shop_images\/donnycocacola--3pxa1O1zoI-unsplash_1_1.png",
+        "headline": "Contact Us",
+        "headline_color": "#f7b102"
       }
     }
   },

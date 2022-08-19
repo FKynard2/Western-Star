@@ -104,6 +104,7 @@
         {% if show_swatches %}form-options-swatches{% endif %}
         {% if forloop.index0 == 0 %}form-options-first{% endif %}"
         "
+        
       >
         {% assign optionIndex = forloop.index0 %}
         <legend class="option-header">
@@ -121,6 +122,7 @@
                   option-value
                   {% if option.selected_value == value %}option-selected{% endif %}
                 "
+               
               >
                 <label
                   for="{{ section.id }}-form-{{ form_id }}data-product-option-{{ optionIndex }}-{{ forloop.index0 }}"

@@ -30218,7 +30218,7 @@ const RULES = `
        
        
             
-        
+  
             
 
         if (this.el.querySelector('[data-media-type="video"]')) {
@@ -30484,7 +30484,7 @@ const RULES = `
         this.selected.thumbnail.dataset.gallerySelected = true;
         const {media, mediaType} = this.selected.figure.dataset;
         this.viewer.dataset.selectedMediaType = mediaType;
-
+        
         this._disableHoverZoom();
 
         if (this.selectedModel) {

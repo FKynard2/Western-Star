@@ -17,26 +17,19 @@
 
 <div
   class="
-    
     product-gallery--viewer
     {% if product.media.size > 0 %}
       product-gallery--has-media
-    {% endif %}
+    {% endif %} 
   "
   data-gallery-viewer
-  data-carousel
-  data-flickity = '{"sync": ".gallery-nav"}'
- 
- 
 >
-{% comment %} <button class="button button--previous">&larr;</button>
- <button date-flickity id="next" class="button next">&rarr;</button> {% endcomment %}
+
  
   {% for media in product.media %}
  
       <figure
         class="
-          
           product-gallery--media
           product-gallery--{{ media.media_type }}
         "

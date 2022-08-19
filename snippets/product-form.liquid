@@ -134,8 +134,54 @@
         {% render 'icon-library', id: 'icon-spinner' %}
       </span>
     </button>
+    
   </div>
-
+ 
+      {% assign product_limit = 3 %}
+    
+      <script
+        type="application/json"
+        data-section-type="static-product-recommendations"
+        data-section-id="{{ section.id }}"
+        data-section-data
+      >
+        {
+          "settings": {
+            "limit": {{ product_limit }}
+          },
+          "productId": {{ product.id | json }}
+        }
+      </script>
+    
+      <section
+        class="product-section--container product-row--container product-recommendations--container product-section-combine"
+        data-html
+        data-product-recommendations
+      >
+        {% if recommendations.products_count > 0 %}
+          <h2 class="product-section--title product-recommendations--title title-heading-section">
+            You May Also Like:
+          </h2>
+    
+          <ul
+            class="
+              product-section--content
+              product-row
+              {% if settings.enable_product_card_spacing == false %}product-row--no-spacing{% endif %}
+            "
+            data-product-row
+          >
+            {% for product in recommendations.products limit: product_limit %}
+              {%
+                include 'product-grid-item',
+                product: product
+              %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </section>
+   
+</div>
   {% if product_smart_buttons %}
     {{ form | payment_button }}
   {% endif %}

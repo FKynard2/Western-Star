@@ -4403,16 +4403,20 @@ html::after {
   html::after {
     content: "S";
   }
+ 
 }
 @media screen and (min-width: 860px) {
-  html::after {
+   html::after {
     content: "M";
   }
+ 
 }
 @media screen and (min-width: 1024px) {
   html::after {
     content: "L";
   }
+ 
+  
 }
 @media screen and (min-width: 1080px) {
   html::after {
@@ -12665,8 +12669,9 @@ em strong {
 
 .product--container {
   margin-top: {{ settings.type_size_base | times: 1.25 | divided_by: 16.0 | append: 'rem' }};
-  margin-bottom: -70px;
-  margin-left: -10px;
+  margin-bottom: 190px;
+  
+  
 }
 @media screen and (min-width: 720px) {
   .product--container {
@@ -12724,7 +12729,8 @@ em strong {
     width: 50%;
   }
   .layout--two-col-medium .product-gallery, .layout--two-col-large .product-gallery {
-    width: 112%;
+    width: 100%;
+    margin-bottom: -200px;
   }
 }
 @media screen and (min-width: 860px) {
@@ -12745,7 +12751,7 @@ em strong {
     margin-top: 33px;
   }
   .layout--two-col-medium .product-main, .layout--two-col-large .product-main {
-    width: 75%;
+    width: 45%;
   }
 }
 @media screen and (min-width: 860px) {
@@ -18940,6 +18946,7 @@ shopify-payment-terms {
 .product-gallery--viewer {
   position: relative;
   width: 100%;
+  max-height: 798px;
   overflow: hidden;
   transition: height 0.2s ease;
 }
@@ -19074,6 +19081,7 @@ shopify-payment-terms {
   .product-gallery--media.product-gallery--image-placeholder, .product-gallery--media[data-gallery-selected=true], .product-gallery--media.is-selected {
     z-index: 0;
     opacity: 1;
+    
   }
 }
 .product-gallery--media img {
@@ -22350,8 +22358,12 @@ summary::after {
   padding: 0 1em;
 }
 .faq .question-toggle:checked ~ .answer {
-  max-height: 100vh;
+  max-height: 20vh;
   padding: 1em;
+  overflow-y:auto;
+}
+.faq .question-toggle:checked ~ .answer::-webkit-scrollbar {
+  display:none;
 }
 .margin-top {
   margin-top: 20px;
@@ -22367,11 +22379,13 @@ summary::after {
     width: 100%;
     align-items: center;
     margin-bottom: 30px;
+    position: absolute;
+    bottom: 20%;
 }
 
 .product-section-combine{
   width:100%;
-  margin:0;
+  margin-top:95px;
 }
 
 section > ul > .productgrid--item .productitem--action .product-item-btn {
@@ -22388,6 +22402,7 @@ section > ul > .productgrid--item .productitem--info {
 
 section > .product-row {
   justify-content: space-between;
+  margin-top: 0px
 }
 .title-heading-section{
   font-size: 36px;
@@ -22514,167 +22529,175 @@ section > .product-row {
 
 
 
-{% comment %} /* external css: flickity.css */
 
-* { box-sizing: border-box; }
 
-body { font-family: sans-serif; }
 
-.carousel {
-  background: #FAFAFA;
-  margin-bottom: 20px;
-}
 
-.carousel-cell {
-  max-height: 700px;
-  counter-increment: carousel-cell;
-}
 
-{% comment %} /* cell number */ {% endcomment %}
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
 
-.button {
-  display: inline-block;
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .product-gallery {
+    display: inline-block
+  }
+  .gallery {
+    margin: 0;
+  }
+  display:contents;
+  .product-form--atc{
+    display: flex;
+    flex-direction: column;
+  }
+  .product--price .price--main{
+    width: 25%;
+  }
+  .button-tertiary {
+    width:50%;
+    font-size: 20px;
+    margin: 14px;
+  }
  
-  border: 1px solid #DDD;
-  border-radius: 6px;
-  background-color: #FAFAFA;
-  background-image: linear-gradient( hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) )
+  .title-heading-section {
+    display:none;
+  }
+  .faq {
+    margin: 0 8px !important;
+  }
+  .faq .question-label {
+    grid-template-columns: 40% 0%;
+  }
+  .dynamic-newsletter-figure{
+    width: 60%;
+  }
+  .dynamic-newsletter{
+    margin: 0 auto -40px;
+  }
+  .dynamic-newsletter-content {
+    align-items: center;
+  }
+  .dynamic-newsletter-text {
+    text-align: center !important;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .product--container{
+    margin:0;
+  }
+  .split-section{
+    margin:0 !important;
+  }
 }
 
-.button:hover {
-  background-color: white;
-  border-color: #BBB;
-  cursor: pointer;
+@media only screen and (max-width: 900px) {
+     .product-gallery {
+    display: inline-block
+  }
+  .gallery {
+    margin: 0;
+  }
+  
+  .product-form--atc{
+    display: flex;
+    flex-direction: column;
+  }
+  .product--price .price--main{
+    width: 25%;
+  }
+  .button-tertiary {
+    width:50%;
+    font-size: 20px;
+    margin: 14px;
+  }
+ 
+  .split-section{
+    position:inherit;
+  }
+  .faq {
+    margin: 0 8px !important;
+  }
+  .faq .question-label {
+    grid-template-columns: 40% 0%;
+  }
+  .dynamic-newsletter-figure{
+    width: 60%;
+  }
+  .dynamic-newsletter{
+    margin: 0 auto -40px;
+  }
+  .dynamic-newsletter-content {
+    align-items: center;
+  }
+  .dynamic-newsletter-text {
+    text-align: center !important;
+  }
+  .split-section > section > .faq{
+    width: 96%
+  } 
+  .layout--two-col-medium .product-main{
+    width: 100%
+  }
+  .product-gallery--viewer {
+    max-height: 600px;
+  }
+  .product-section-combine{
+    display:none;
+  }
+}
+.title-heading-section {
+    margin-bottom: 0;
+  }
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .product-form--atc {
+    margin-left: 20px;
+  }
+  .button-tertiary{
+    margin-left: 7px;
+    font-size: 15px;
+  }
+  .layout--two-col-medium .product-gallery{
+    
+  }
+  .faq .question-label {
+    grid-template-columns: 35% 0%;
+  }
+  .product-section-combine{
+    overflow: hidden;
+  }
+  .split-section{
+    margin-bottom: 85px;
+  }
+  .product--price .price--main {
+    width: 23%;
+  }
 }
 
-.button:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-  background-color: white;
+@media only screen and (max-width: 1300px) {
+  section > .product-row{
+    overflow-y:auto;
+  }
+  .faq .question-label {
+    grid-template-columns: 35% 0%;
+  }
+  .button-tertiary{
+    font-size: 19px;
+    margin-left: 20px;
+  }
+} 
+@media only screen and (max-width: 1600px) {
+  section > .product-row {
+    overflow-y: auto;
+  }
 }
 
-.button:active {
-  background-color: #EEE;
-  box-shadow: inset 0 2px 10px hsla(0, 0%, 0%, 0.3);
-}
-
-.button.is-selected {
- background-color: #09F;
-}
-
-{% comment %} /* ---- button-group ---- */ {% endcomment %}
-
-.button-group {
-  display: inline-block;
-  vertical-align: bottom;
-}
-
-.button-group:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.button-group .button {
-  float: left;
-  border-radius: 0;
-  border-right-width: 0;
-}
-
-.button-group .button:first-child {
-  border-radius: 6px 0 0 6px;
-}
-
-.button-group .button:last-child {
-  border-radius: 0 6px 6px 0;
-  border-right-width: 1px;
-} {% endcomment %}
-
-{% comment %} /* ---- button-row ---- */ {% endcomment %}
-
-.button-row {
-  text-align: center;
-}
-
-
-
-html { overflow-y: scroll; }
-
-.carousel {
-  background: #EEE;
-}
-
-.carousel-cell {
-  width: 100%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: gallery-cell;
-}
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
-.flickity-button {
-    position: absolute;
-    /* background: #f7b102; */
-    background-color: green !important;
-    border: none;
-    /* color: #333; */
-}
-
-.gallery {
-  background: #FAFAFA;
-  margin-bottom: 40px;
-}
-
-.gallery-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: gallery-cell;
-}
-
-/* cell number */
-
-
-.gallery-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
-
-.gallery-nav .gallery-cell {
-  width: 18%;
-  height: 150px;
-}
-
-.gallery-nav .gallery-cell:before {
-  font-size: 50px;
-  line-height: 150px;
-}
-
-.gallery-cell.is-selected {
-  background: #ED2;
+.template-page .site-main .shopify-section .split-section{
+  position:inherit;
 }
