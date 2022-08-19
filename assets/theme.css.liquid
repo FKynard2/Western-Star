@@ -22535,7 +22535,11 @@ section > .product-row {
 
 
 
-
+@media only screen and (max-width: 400px){
+  .product--price .price--main{
+    width: 32% !important;
+  }
+}
 
 
 
@@ -22597,17 +22601,14 @@ section > .product-row {
     display: inline-block
   }
   .gallery {
-    margin: 0;
+    margin: 0; 
   }
   
   .product-form--atc{
     display: flex;
     flex-direction: column;
   }
-  .product--price .price--main{
-    width: 25%;
-  }
-  .button-tertiary {
+    .button-tertiary {
     width:50%;
     font-size: 20px;
     margin: 14px;
@@ -22676,7 +22677,7 @@ section > .product-row {
     margin-bottom: 85px;
   }
   .product--price .price--main {
-    width: 23%;
+    width: 25%;
   }
 }
 
@@ -22700,4 +22701,12 @@ section > .product-row {
 
 .template-page .site-main .shopify-section .split-section{
   position:inherit;
+}
+
+.dynamic-newsletter-content .home-section--title-container .home-section--title {
+  text-align: left;
+}
+
+.dynamic-newsletter-content .form-fields-inline .newsletter-input .form-field-input{
+  border-radius: 10px 0 0 10px;
 }

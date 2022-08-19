@@ -1,0 +1,99 @@
+{% comment %}
+  @param layout {String}
+    Layout type
+
+  @param show_description {Bool}
+    If false, hide the product description
+
+  @param gallery_aspect_ratio {string}
+    This is the gallery aspect ratio, can be one of 'natural', 'short', 'square', 'long'
+
+  @param gallery_thumbnail_position {string}
+    This is the gallery thumbnail position, can be one of 'below', or 'left'
+
+  @param gallery_image_crop {boolean}
+    Whether to crop images
+
+  @param gallery_hover_zoom {String}
+    This is the hover zoom setting, which is either 'disabled', 'separate', or 'replace'
+
+  @param gallery_click_to_zoom {String}
+    This is the click to zoom setting, which is either 'disabled', 'mobile', 'desktop', or 'always'
+{% endcomment %}
+
+{% unless show_description %}
+  {% assign show_description = true %}
+{% endunless %}
+{% assign selected_variant = product.selected_or_first_available_variant %}
+{% assign selected_image = selected_variant.image | default: product.featured_image %}
+{% assign compare_at_price = selected_variant.compare_at_price %}
+{% assign price = selected_variant.price %}
+{% assign sku = selected_variant.sku %}
+{% assign product_available = product.available %}
+
+{%
+  include 'api' with 'variant:price',
+  product: product,
+  variant: selected_variant,
+%}
+
+{% if onboarding %}
+  {% assign compare_at_price = 2999 %}
+  {% assign price = 1999 %}
+{% endif %}
+
+{% assign on_sale = false %}
+{% if compare_at_price > price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+{%- capture share_buttons -%}
+  {% assign social_image = false %}
+  {% if product.featured_image %}
+    {% assign social_image = product.featured_image | img_url: '1024x' %}
+  {% endif %}
+  {% assign social_url = shop.url | append: product.url %}
+  {%-
+    include 'share-buttons',
+    snippet_title: 'general.share_buttons.title',
+    social_image: social_image,
+    social_title: product.title,
+    social_url: social_url
+  -%}
+{%- endcapture  -%}
+
+<article class="product--outer">
+  {% comment %}
+    Product slideshow, never moves
+  {% endcomment %}
+  {%
+    include 'product-gallery-quickshop',
+    selected_image: selected_image,
+    is_product_modal: false,
+    aspect_ratio: gallery_aspect_ratio,
+    thumbnail_position: gallery_thumbnail_position,
+    image_crop: gallery_image_crop,
+    click_to_zoom: gallery_click_to_zoom,
+    hover_zoom: gallery_hover_zoom,
+    onboarding: onboarding,
+  %}
+  
+ 
+
+
+
+  {% comment %}
+    If is a 3 column layout, the form will move here at $bp-large (layout.isBreakpoint('L'))
+  {% endcomment %}
+  {% if layout == 'layout--three-col' %}
+    <div class="product-form--alt" data-product-form-alt></div>
+  {% endif %}
+
+  {% capture product_readmore %}{%- include 'shortcode-readmore', text: product.description -%}{% endcapture %}
+  {% unless product_readmore == blank %}
+    <div class="product-readmore rte">{{ product_readmore }}</div>
+  {% endunless %}
+</article>
+
+{% assign show_description = blank %}
+{% assign layout = blank %}

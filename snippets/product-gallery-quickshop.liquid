@@ -1,0 +1,304 @@
+{% comment %}
+  @param product {Product}
+    The product object in question
+
+  @param aspect_ratio {string}
+    This is the gallery aspect ratio, can be one of 'natural', 'short', 'square', 'long'
+
+  @param thumbnail_position {string}
+    This is the gallery thumbnail position, can be one of 'below', or 'left'
+
+  @param image_crop {boolean}
+    Whether to crop images
+
+  @param hover_zoom {String}
+    This is the hover zoom setting, which is either 'disabled', 'separate', or 'replace'
+
+  @param click_to_zoom {String}
+    This is the click to zoom setting, which is either 'disabled', 'mobile', 'desktop', or 'always'
+
+  @param onboarding {Bool}
+    True if no product is loaded
+{% endcomment %}
+
+{% assign selected_variant = product.selected_or_first_available_variant %}
+{% assign selected_media = selected_variant.featured_media | default: product.featured_media %}
+
+{%- capture slider_classes -%}
+  product-gallery--slider
+  {% if product.media.size > 0 %}
+    product-gallery--has-images
+    product-gallery--style-{{ settings.product_slideshow_style }}
+  {% endif %}
+{%- endcapture -%}
+
+<div 
+  class="
+    product-gallery
+    product-gallery--thumbs-{{ thumbnail_position }}
+    {% if hover_zoom != 'disabled' %}hover-zoom-enabled{% endif %}
+    {% if click_to_zoom != 'disabled' and click_to_zoom != 'mobile' %}click-to-zoom-enabled{% endif %}
+  "
+  data-product-gallery
+  {% if image_crop %}data-product-gallery-image-crop{% endif %}
+  data-product-gallery-aspect-ratio="{{ aspect_ratio }}"
+  data-product-gallery-thumbnails="{{ thumbnail_position }}"
+>
+{% if thumbnail_position == 'left' %}
+    {%
+      include 'product-gallery-navigation'
+      product: product,
+      selected_media: selected_media,
+      aspect_ratio: aspect_ratio,
+      image_crop: image_crop,
+    %}
+  {% endif %}  
+   
+
+  {%
+    include 'product-gallery-viewer'
+    product: product,
+    selected_media: selected_media,
+    aspect_ratio: aspect_ratio,
+    image_crop: image_crop,
+    hover_zoom: hover_zoom,
+  %}
+
+  {% assign first_model = product.media | where: "media_type", "model" | first %}
+  {% if selected_media.media_type == 'model' %}
+    {% assign model = selected_media %}
+  {% else %}
+    {% assign model = first_model %}
+  {% endif %}
+  {% if model %}
+    <button
+      class="product-gallery--viewinyourspace"
+      data-default-model-id="{{ first_model.id }}"
+      data-shopify-xr
+      data-shopify-model3d-id="{{ model.id }}"
+      data-shopify-title="{{ product.title }}"
+      data-shopify-xr-hidden
+    >
+      {%
+        include 'icon-library',
+        id: 'icon-3D',
+      %}
+      {{ 'product.media.view_in_your_space' | t }}
+    </button>
+  {% endif %}
+
+
+
+  <div class="product-main">
+    <div class="product-details" data-product-details>
+
+      {% for block in section.blocks %}
+        <div
+          class="
+            product-block
+            product-block--{{ block.type }}
+            {% if forloop.first %}
+              product-block--first
+            {% endif %}
+          "
+          {{ block.shopify_attributes }}
+        >
+          {% case block.type %}
+            {% when '@app' %}
+              <div class="product-app">
+                {% render block %}
+              </div>
+
+            {% when 'title' %}
+              {% if template == 'index' %}
+                <h2 class="product-title">
+              {% else %}
+                <h1 class="product-title">
+              {% endif %}
+                {% unless onboarding %}
+                  {{ product.title }}
+                {% else %}
+                  {{ 'onboarding.product.title' | t }}
+                {% endunless %}
+              {% if template == 'index' %}
+                </h2>
+              {% else %}
+                </h1>
+              {% endif %}
+
+            {% when 'text' %}
+              <div class="product-text">
+                {{ block.settings.text }}
+              </div>
+
+            {% when 'vendor' %}
+              {% if product.vendor != blank or onboarding %}
+                <div class="product-vendor">
+                  {% unless onboarding %}
+                    {%- capture vendor_link -%}
+                      {{ product.vendor | link_to_vendor }}
+                    {%- endcapture -%}
+                    {{ 'product.general.by_vendor_html' | t: vendor_link: vendor_link }}
+                  {% else %}
+                    {{ 'onboarding.product.by_vendor' | t }}
+                  {% endunless %}
+                </div>
+              {% endif %}
+
+            {% when 'rating' %}
+              {% if settings.product_ratings_reviews and product.metafields.reviews.rating.value != blank %}
+                <div class="product-ratings">
+                  <span class="shopify-product-reviews-badge" data-id="{{ product.id }}">
+                    <span class="spr-badge">
+                      <span class="spr-starrating spr-badge-starrating">
+                        <i class="spr-icon spr-icon-star-empty"></i>
+                        <i class="spr-icon spr-icon-star-empty"></i>
+                        <i class="spr-icon spr-icon-star-empty"></i>
+                        <i class="spr-icon spr-icon-star-empty"></i>
+                        <i class="spr-icon spr-icon-star-empty"></i>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              {% endif %}
+
+            {% when 'price' %}
+              <div class="product-pricing" aria-live="polite">
+                {%
+                  include 'product-badge',
+                  class_root: 'product',
+                  product_available: product_available,
+                  on_sale: on_sale,
+                  price: price,
+                  compare_at_price: compare_at_price,
+                  show_saved: true
+                %}
+
+                {%
+                  include 'product-price',
+                  class_root: 'product',
+                  price: price,
+                  price_varies: false,
+                  compare_at_price: compare_at_price,
+                  compare_at_price_varies: false,
+                  on_sale: on_sale,
+                  emphasize_price: false,
+                  show_original: true
+                %}
+                   
+              </div>
+
+            {% when 'sku' %}
+              {% unless onboarding %}
+                <div
+                  class="
+                    product-sku
+                    {% if sku == empty %}product-sku--empty{% endif %}
+                  "
+                >
+                  {{ 'product.general.sku_html' | t: sku: sku | strip_newlines }}
+                </div>
+              
+                {% endunless %}
+
+            {% when 'form' %}
+            
+              {%- assign product_sold_out = false -%}
+              {%- if settings.in_stock_notification_form != 'disabled' and product.available == false -%}
+                {%- assign product_sold_out = true -%}
+              {%- endif -%}
+            
+              <div class="product-form--regular" data-product-form>
+
+              
+                {%
+                  include 'product-gallery-navigation'
+                  product: product,
+                  selected_media: selected_media,
+                  aspect_ratio: aspect_ratio,
+                  image_crop: image_crop,
+                %}
+               
+  
+                <div {% if product_sold_out %}class="product-sold-out"{% endif %} data-product-form-area>
+                  {% if is_product_modal %}
+                    <div data-product-quickshop-message class="product-message--container"></div>
+                  {% endif %}
+                  {% unless onboarding %}
+                 
+                    {%
+                      include 'product-form-quickshop',
+                      product: product,
+                      show_dcb: show_dcb,
+                      selected_variant: selected_variant,
+                      is_product_modal: true,
+                    %}
+                    
+
+                    {% if settings.in_stock_notification_form != 'disabled' %}
+                      {%
+                        include 'product-in-stock-notification-form',
+                        product: product,
+                      %}
+                    {% endif %}
+                  {% endunless %}
+                </div>
+              </div>
+
+            {% when 'view-product-link' %}
+              <a
+                class="product-link"
+                href="{{ product.url | within: collection }}"
+                data-product-details-link
+              >
+                {{ block.settings.text | escape }}
+              </a>
+
+            {% when 'custom-liquid' %}
+              {% if block.settings.custom_liquid != blank %}
+                <div class="custom-liquid">
+                  {{ block.settings.custom_liquid }}
+                </div>
+              {% endif %}
+
+            {% when 'share' %}
+              {{ share_buttons | strip_newlines }}
+
+            {% when 'description' %}
+              {% capture product_description %}{%- include 'shortcode-readmore', text: product.description, before_readmore: true -%}{% endcapture %}
+              {% if product_description != blank and show_description %}
+                <div class="product-description rte" data-product-description>{{ product_description }}</div>
+              {% endif %}
+          {% endcase %}
+        </div>
+      {% endfor %}
+
+      {% if layout == 'layout--three-col' %}
+        {%- assign product_sold_out = false -%}
+        {%- if settings.in_stock_notification_form != 'disabled' and product.available == false -%}
+          {%- assign product_sold_out = true -%}
+        {%- endif -%}
+        <div class="product-form--regular" data-product-form-regular>
+          <div {% if product_sold_out %}class="product-sold-out"{% endif %} data-product-form-area>
+            {% unless onboarding %}
+              {%
+                include 'product-form',
+                product: product,
+                selected_variant: selected_variant,
+                is_product_modal: false,
+              %}
+              {%- if settings.in_stock_notification_form != 'disabled' -%}
+                {%
+                  include 'product-in-stock-notification-form',
+                  product: product,
+                %}
+              {%- endif -%}
+            {% endunless %}
+          </div>
+        </div>
+      {% endif%}
+    </div> {% comment %} end product-details {% endcomment %}
+
+  </div> {% comment %} end product-main {% endcomment %}
+
+</div>
