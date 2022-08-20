@@ -408,6 +408,12 @@
       "zoomTap": "Tap or pinch to zoom",
       "zoomTapMobile": "Tap to zoom"
     },
+    "quantity": {
+      "label": "Quantity",
+      "input_label": "Quantity for {{ product }}",
+      "increase": "Increase quantity for {{ product }}",
+      "decrease": "Decrease quantity for {{ product }}"
+    },
     "media": {
       "view_in_your_space": "View in your space"
     },

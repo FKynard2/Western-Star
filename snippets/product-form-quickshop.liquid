@@ -28,9 +28,6 @@
 {% endif %}
 
 {% form 'product', product, class: product_form_class, data-product-form: '' %}
-
-   
-
   {% if product.has_only_default_variant %}
     <input
       name="id"
@@ -53,45 +50,43 @@
         inventory_quantity: selected_variant.inventory_quantity
       %}
   {% endif %}
-{% if show_quantity %}
+
   <div class="product-form--atc">
-     {% comment %} quantity selector with plus and minus {% endcomment %}
- <div class="qtydiv">
-  <label for="Quantity" class="quantity-selector">Quantity</label>
-  <div class="qtybox">
-    <span class="btnqty qtyminus icon icon-minus">-</span>
-    <input type="text" id="quantity" name="quantity" value="1" min="1" class="quantity-selector quantity-input" readonly="">
-    <span class="btnqty qtyplus icon icon-plus">+</span>
-  </div>
-</div>
+  
+  {% if show_quantity %}
+   
+         <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
+              <label class="form__label" for="Quantity-{{ section.id }}">
+                {{ 'product..quantity.label' | t }}
+              </label>
+              <quantity-input class="quantity quantity-plus-minus">
+                <button class="quantity__button no-js-hidden quantity-minus" name="minus" type="button">
+                  <span class="visually-hidden">{{ 'product.quantity.decrease' | t: product: product.title | escape }}</span>
+                  -
+                </button>
+                   
+                <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector quantity-input " >
+              
+                <button class="quantity__button no-js-hidden quantity-plus" name="plus" type="button">
+                  <span class="visually-hidden">{{ 'product.quantity.increase' | t: product: product.title | escape }}</span>
+                  +
+                </button>
+              </quantity-input>
+        </div>
+
 {% endif %}
-{% comment %}   
-    {% if show_quantity %}
+    {% comment %} {% if show_quantity %}
       <div class="product-form--atc-qty form-fields--qty" data-quantity-wrapper>
         <div class="form-field form-field--qty-select">
           <div class="form-field-select-wrapper">
-            <select
-              id="product-quantity-select"
-              class="form-field-input form-field-select"
-              aria-label="{{ 'general.general.quantity' | t }}"
-              data-quantity-select
-            >
-              {% for i in (1..9) %}
-                <option {% if i == 1 %}selected {% endif %}value="{{ i }}">
-                  {{ i }}
-                </option>
-              {% endfor %}
-              <option value="10+">
-                10+
-              </option>
-            </select>
+       
             <label
               for="product-quantity-select"
               class="form-field-title"
             >
               {{ 'general.general.quantity' | t }}
             </label>
-            {% render 'icon-library', id: 'icon-chevron-down-small' %}
+            
           </div>
         </div>
         <div class="form-field form-field--qty-input hidden">
@@ -115,8 +110,8 @@
       </div>
     {% else %}
       <input name="quantity" type="hidden" value="1">
-    {% endif %}
-{% endcomment %}
+    {% endif %} {% endcomment %}
+
     <button
       class="product-form--atc-button button-tertiary {% unless selected_variant.available %}disabled{% endunless %}"
       type="submit"
@@ -134,26 +129,8 @@
         {% render 'icon-library', id: 'icon-spinner' %}
       </span>
     </button>
-    
   </div>
- 
-      {% assign product_limit = 3 %}
-    
-      <script
-        type="application/json"
-        data-section-type="static-product-recommendations"
-        data-section-id="{{ section.id }}"
-        data-section-data
-      >
-        {
-          "settings": {
-            "limit": {{ product_limit }}
-          },
-          "productId": {{ product.id | json }}
-        }
-      </script>
-   
-</div>
+
   {% if product_smart_buttons %}
     {{ form | payment_button }}
   {% endif %}

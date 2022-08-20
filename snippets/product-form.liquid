@@ -53,17 +53,31 @@
         inventory_quantity: selected_variant.inventory_quantity
       %}
   {% endif %}
-{% if show_quantity %}
+  
+
   <div class="product-form--atc">
      {% comment %} quantity selector with plus and minus {% endcomment %}
- <div class="qtydiv">
-  <label for="Quantity" class="quantity-selector">Quantity</label>
-  <div class="qtybox">
-    <span class="btnqty qtyminus icon icon-minus">-</span>
-    <input type="text" id="quantity" name="quantity" value="1" min="1" class="quantity-selector quantity-input" readonly="">
-    <span class="btnqty qtyplus icon icon-plus">+</span>
-  </div>
-</div>
+   {% if show_quantity %}
+   
+         <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
+              <label class="form__label" for="Quantity-{{ section.id }}">
+                {{ 'product..quantity.label' | t }}
+              </label>
+              <quantity-input class="quantity quantity-plus-minus">
+                <button class="quantity__button no-js-hidden quantity-minus" name="minus" type="button">
+                  <span class="visually-hidden">{{ 'product.quantity.decrease' | t: product: product.title | escape }}</span>
+                  -
+                </button>
+                   
+                <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector quantity-input " >
+              
+                <button class="quantity__button no-js-hidden quantity-plus" name="plus" type="button">
+                  <span class="visually-hidden">{{ 'product.quantity.increase' | t: product: product.title | escape }}</span>
+                  +
+                </button>
+              </quantity-input>
+        </div>
+
 {% endif %}
 {% comment %}   
     {% if show_quantity %}

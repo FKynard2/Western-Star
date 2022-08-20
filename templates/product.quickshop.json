@@ -20,22 +20,24 @@
           "type": "price",
           "settings": {}
         },
-        "form": {
-          "type": "form",
-          "settings": {}
-        },
         "description": {
           "type": "description",
           "settings": {}
         },
+        "form": {
+          "type": "form",
+          "settings": {}
+        },
         "view-product-link": {
           "type": "view-product-link",
+          "disabled": true,
           "settings": {
             "text": "View full details"
           }
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -44,13 +46,13 @@
         "vendor",
         "rating",
         "price",
-        "form",
         "description",
+        "form",
         "view-product-link",
         "share"
       ],
       "settings": {
-        "quickshop_show_dcb": true,
+        "quickshop_show_dcb": false,
         "quickshop_product_cart_redirect": false,
         "quickshop_gallery_aspect_ratio": "natural",
         "quickshop_gallery_image_crop": false,

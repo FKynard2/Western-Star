@@ -76,18 +76,52 @@
             "question": "Product Description",
             "description": ""
           }
+        },
+        "4f8fa834-cdfc-4f88-968e-2cea9a0ec575": {
+          "type": "metafield",
+          "settings": {
+            "title": "Specification",
+            "question": "Specification",
+            "description": "<p>{{ product.metafields.custom.title_1 | metafield_tag }}<\/p>"
+          }
+        },
+        "9835bef5-a0b5-4877-81d7-4670d834d6cc": {
+          "type": "metafield",
+          "settings": {
+            "title": "Materials + Care",
+            "question": "Materials + Care",
+            "description": "<p>{{ product.metafields.custom.materials | metafield_tag }}<\/p>"
+          }
+        },
+        "6dc4d13a-4be6-4f7e-93ce-b739cf75cba4": {
+          "type": "metafield",
+          "settings": {
+            "title": "Sizing",
+            "question": "Sizing",
+            "description": "<p>{{ product.metafields.custom.sizing | metafield_tag }}<\/p>"
+          }
+        },
+        "2341ea1f-02ba-4437-a9e2-d88deee67675": {
+          "type": "metafield",
+          "settings": {
+            "title": "Shipping",
+            "question": "Shipping & Returns",
+            "description": "<p>{{ product.metafields.custom.shipping | metafield_tag }}<\/p>"
+          }
         }
       },
       "block_order": [
-        "fa9e63cb-9067-492c-ae0a-391b8dd6e671"
+        "fa9e63cb-9067-492c-ae0a-391b8dd6e671",
+        "4f8fa834-cdfc-4f88-968e-2cea9a0ec575",
+        "9835bef5-a0b5-4877-81d7-4670d834d6cc",
+        "6dc4d13a-4be6-4f7e-93ce-b739cf75cba4",
+        "2341ea1f-02ba-4437-a9e2-d88deee67675"
       ],
       "settings": {
-        "show_product_recommendations": true,
-        "product_recommendations_heading": "You may also like",
         "question_color": "#ffffff",
         "text_color": "#000000",
         "hover_color": "#ffffff",
-        "accordian_width": 96,
+        "accordian_width": 50,
         "text_before": "+",
         "text_after": "-"
       }

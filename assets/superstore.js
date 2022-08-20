@@ -40565,7 +40565,19 @@ const RULES = `
         passive: false
       });
     };
-
+    $('.qtybox .btnqty').on('click', function () {
+      console.log("clicked")
+      var qty = parseInt($(this).parent('.qtybox').find('.quantity-input').val());
+      if ($(this).hasClass('qtyplus')) {
+        qty++;
+      } else {
+        if (qty > 1) {
+          qty--;
+        }
+      }
+      qty = isNaN(qty) ? 1 : qty;
+      $(this).parent('.qtybox').find('.quantity-input').val(qty);
+    });
     /* harmony default export */ const FlickityTouchFix = flickityTouchFix; // CONCATENATED MODULE: ./source/scripts/Superstore.js
     // jQuery plugins
     // eslint-disable-line
@@ -40717,21 +40729,30 @@ const RULES = `
 })();
 //# sourceMappingURL=superstore.js.map?1652899789683
 
-// this is for the quanity selector with the plus minus button
+// this is for the quantity selector with the plus minus button
 
-$('.qtybox .btnqty').on('click', function () {
-  var qty = parseInt($(this).parent('.qtybox').find('.quantity-input').val());
-  if ($(this).hasClass('qtyplus')) {
-    qty++;
-  } else {
-    if (qty > 1) {
-      qty--;
-    }
+
+class QuantityInput extends HTMLElement {
+  constructor() {
+    super();
+    this.input = this.querySelector('input');
+    this.changeEvent = new Event('change', { bubbles: true })
+
+    this.querySelectorAll('button').forEach(
+      (button) => button.addEventListener('click', this.onButtonClick.bind(this))
+    );
   }
-  qty = isNaN(qty) ? 1 : qty;
-  $(this).parent('.qtybox').find('.quantity-input').val(qty);
-});
 
+  onButtonClick(event) {
+    event.preventDefault();
+    const previousValue = this.input.value;
+
+    event.target.name === 'plus' ? this.input.stepUp() : this.input.stepDown();
+    if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
+  }
+}
+
+customElements.define('quantity-input', QuantityInput);
 
 
 

@@ -18071,7 +18071,9 @@ noscript .disclosure-list {
     padding: {{ settings.type_size_base | times: 3.125 | divided_by: 16.0 | append: 'rem' }};
   }
   .modal--quickshop-full.quickshop-thumbs-left .modal-inner {
-    max-width: 60rem;
+    max-width: 1500px;
+    border-radius: 20px;
+    
   }
   .modal--quickshop-full .product-gallery {
     display: inline-block;
@@ -22709,4 +22711,91 @@ section > .product-row {
 
 .dynamic-newsletter-content .form-fields-inline .newsletter-input .form-field-input{
   border-radius: 10px 0 0 10px;
+}
+
+{% comment %} this is for the modal only  {% endcomment %}
+
+div > .product--outer .product-main .product-details .product-block--price {
+  height: 3vh;
+}
+
+div > .product--outer .product-gallery .product-gallery--viewer {
+  max-height: 500px;
+}
+
+div > .product--outer .product-gallery--viewer .product-gallery--media img{
+  width: 70% !important;
+}
+
+div > .product--outer .product-main {
+  margin-left: 0;
+}
+
+{% comment %} this is for the plus minus quanity selector {% endcomment %}
+
+.product-form__input {
+  display:flex;
+}
+.quantity-plus-minus{
+  display:flex;
+}
+.quantity-input {
+  width: 67px;
+  height: 41px
+}
+
+.quantity__button{
+  width: 67px;
+}
+
+.quantity-input {
+    color: currentColor;
+    font-size: 15px;
+    font-weight: 700;
+    opacity: .85;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    padding: 0 0.5rem;
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    border-block: 1px solid black;
+}
+.quantity__button {
+    
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-foreground));
+    padding: 0;
+    border: 1px solid black
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-plus{
+  border-radius: 0 10px 10px 0;
+}
+.quantity-minus{
+border-radius: 10px 0 0 10px
+}
+
+.form__label {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 5px;
+    margin-right: 10px;
 }
