@@ -30,6 +30,7 @@
 {% assign price = selected_variant.price %}
 {% assign sku = selected_variant.sku %}
 {% assign product_available = product.available %}
+{% assign product_link = product.url %}
 
 {%
   include 'api' with 'variant:price',
@@ -238,7 +239,10 @@
             {% when 'description' %}
               {% capture product_description %}{%- include 'shortcode-readmore', text: product.description, before_readmore: true -%}{% endcapture %}
               {% if product_description != blank and show_description %}
-                <div class="product-description rte" data-product-description>{{ product_description }}</div>
+                <div class="product-description rte read-more" data-product-description>{{ product_description }}</div>
+                <br>
+                  <a href="{{product_link}}">Read More</a>
+                 
               {% endif %}
           {% endcase %}
         </div>

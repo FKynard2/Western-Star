@@ -50,7 +50,9 @@
     {%- capture price_html -%}
       <span class="money">
       {% if settings.currency_code_enabled %}
-        {{ price  | money_with_currency }}
+        {{ price  | money_with_currency }} 
+        {% else %}
+        {{ price | money }}
         {% endif %}
       </span>
     {%- endcapture -%}

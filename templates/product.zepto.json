@@ -1,0 +1,173 @@
+{
+  "sections": {
+    "main": {
+      "type": "static-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "6d3f348a-9fdc-417c-a0d7-24d03247d906": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "rating",
+        "price",
+        "6d3f348a-9fdc-417c-a0d7-24d03247d906",
+        "form",
+        "share",
+        "description"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "layout": "layout--two-col-medium",
+        "show_dcb": false,
+        "product_cart_redirect": false,
+        "gallery_aspect_ratio": "square",
+        "gallery_image_crop": false,
+        "gallery_thumbnail_position": "below",
+        "gallery_video_autoplay": true,
+        "gallery_video_looping": true,
+        "gallery_hover_zoom": "disabled",
+        "gallery_click_to_zoom": "disabled"
+      }
+    },
+    "1659641328c7a2f364": {
+      "type": "description-accordian",
+      "blocks": {
+        "fa9e63cb-9067-492c-ae0a-391b8dd6e671": {
+          "type": "Product_description",
+          "settings": {
+            "title": "Product Description",
+            "question": "Product Description",
+            "description": ""
+          }
+        },
+        "4f8fa834-cdfc-4f88-968e-2cea9a0ec575": {
+          "type": "metafield",
+          "settings": {
+            "title": "Specification",
+            "question": "Specification",
+            "description": "<p>{{ product.metafields.custom.title_1 | metafield_tag }}<\/p>"
+          }
+        },
+        "9835bef5-a0b5-4877-81d7-4670d834d6cc": {
+          "type": "metafield",
+          "settings": {
+            "title": "Materials + Care",
+            "question": "Materials + Care",
+            "description": "<p>{{ product.metafields.custom.materials | metafield_tag }}<\/p>"
+          }
+        },
+        "6dc4d13a-4be6-4f7e-93ce-b739cf75cba4": {
+          "type": "metafield",
+          "settings": {
+            "title": "Sizing",
+            "question": "Sizing",
+            "description": "<p>{{ product.metafields.custom.sizing | metafield_tag }}<\/p>"
+          }
+        },
+        "2341ea1f-02ba-4437-a9e2-d88deee67675": {
+          "type": "metafield",
+          "settings": {
+            "title": "Shipping",
+            "question": "Shipping & Returns",
+            "description": "<p>{{ product.metafields.custom.shipping | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fa9e63cb-9067-492c-ae0a-391b8dd6e671",
+        "4f8fa834-cdfc-4f88-968e-2cea9a0ec575",
+        "9835bef5-a0b5-4877-81d7-4670d834d6cc",
+        "6dc4d13a-4be6-4f7e-93ce-b739cf75cba4",
+        "2341ea1f-02ba-4437-a9e2-d88deee67675"
+      ],
+      "settings": {
+        "question_color": "#ffffff",
+        "text_color": "#000000",
+        "hover_color": "#ffffff",
+        "accordian_width": 50,
+        "text_before": "+",
+        "text_after": "-"
+      }
+    },
+    "recommendations": {
+      "type": "static-product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like:"
+      }
+    },
+    "product-reviews": {
+      "type": "static-product-reviews",
+      "disabled": true,
+      "settings": {}
+    },
+    "recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": false
+      }
+    },
+    "1659470153ae3e7c28": {
+      "type": "dynamic-newsletter",
+      "settings": {
+        "title": "Subscribe To Our Newsletter",
+        "subheading": "<p>Get the latest articles and business updates sthat you need to know, you'll even get special recommendations weekly. <\/p>",
+        "heading_color": "#064664",
+        "subheading_color": "#252b42",
+        "background_color": "#f7b102",
+        "section_spacing_desktop": 50,
+        "section_spacing_mobile": 36,
+        "image": "shopify:\/\/shop_images\/Western_Star_Logo_PNG.png",
+        "desktop_alignment": "left",
+        "mobile_alignment": "top"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1659641328c7a2f364",
+    "recommendations",
+    "product-reviews",
+    "recently-viewed",
+    "1659470153ae3e7c28"
+  ]
+}
