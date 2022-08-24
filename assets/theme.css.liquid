@@ -18021,6 +18021,9 @@ noscript .disclosure-list {
 @media screen and (min-width: 1024px) {
   .modal--quickshop-full .product--outer {
     display: flex;
+    overflow: hidden;
+    height: 52vh;
+
   }
 }
 .modal--quickshop-full .product-gallery,
@@ -18071,18 +18074,18 @@ noscript .disclosure-list {
     padding: {{ settings.type_size_base | times: 3.125 | divided_by: 16.0 | append: 'rem' }};
   }
   .modal--quickshop-full.quickshop-thumbs-left .modal-inner {
-    max-width: 1500px;
+    max-width: 1285px;
     border-radius: 20px;
-    max-height:620px;
+    max-height:600px;
     
   }
   .modal--quickshop-full .product-gallery {
     display: inline-block;
-    width: 47%;
+    width: 50%;
   }
   .modal--quickshop-full .product-main {
     display: inline-block;
-    width: 46%;
+    width: 50%;
     margin-top: 0;
     margin-left: 7%;
   }
@@ -22792,10 +22795,86 @@ border-radius: 10px 0 0 10px
     padding: 5px;
     margin-right: 10px;
 }
-
+{% comment %} this is for the quickshop {% endcomment %}
 .read-more {
-  height: 21vh;
+  height:11vh;
   overflow:hidden;
   text-overflow:ellipsis;
+  resize: vertical;
 }
 
+.modal .button-tertiary {
+  font-size: 22px;
+  width:30%;
+  margin-left: 75px;
+}
+{% comment %} This is for the zepto {% endcomment %}
+
+.custom-product--custom-soccer-ball .product-form--atc{
+  margin-left: -1px;
+}
+
+.custom-product--custom-soccer-ball .pplr, .pplr_image, .pplr_final {
+  position:inherit !important;
+}
+
+{% comment %} this is to truncate the quickshop description {% endcomment %}
+
+.truncate{
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 4);
+  -webkit-box-orient: vertical;
+  word-break: var(--word-break, 'none');
+  overflow: hidden;
+  hyphens: auto;
+  text-align: var(--align, left);
+  
+  // Automatically use "word-break: break-all" for single-lines
+  // (https://css-tricks.com/css-switch-case-conditions)
+  --is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+  --delay: Calc(-1s * (var(--is-single-line, 1) - 1)); 
+  animation: states 1s var(--delay) paused; 
+  
+  @keyframes states {
+      0% { word-break: break-all; }       
+  }
+}
+
+
+/**** JUST FOR THIS DEMO: ****/
+
+
+.truncate{
+  font-size: var(--font-size, 1em);
+  width: var(--width, 97%);
+  text-shadow: 1px 3px 0 rgba(black, .3);
+  position: relative; 
+  background: inherit;
+  
+  &:hover{
+    outline: 2px dotted #FFFFFF99;
+  }
+  
+  // fade text's last word, if clamped () 
+  &::after{
+    content: '';
+    width: 0;
+    height: 2ch;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    //background: linear-gradient(90deg, transparent, var(--bg));
+    background: inherit; // it's easier to work with inheritance 
+    mask-image: linear-gradient(to left, black, transparent);
+    transition: .2s;
+  }
+  
+  &.clamped{
+    &::after{
+      width: 3em;
+    }
+  }
+  
+ 
+}

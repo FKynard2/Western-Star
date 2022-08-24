@@ -239,7 +239,7 @@
             {% when 'description' %}
               {% capture product_description %}{%- include 'shortcode-readmore', text: product.description, before_readmore: true -%}{% endcapture %}
               {% if product_description != blank and show_description %}
-                <div class="product-description rte read-more" data-product-description>{{ product_description }}</div>
+                <div class="product-description rte truncate" data-product-description>{{ product_description }}</div>
                 <br>
                   <a href="{{product_link}}">Read More</a>
                  
@@ -257,7 +257,7 @@
           <div {% if product_sold_out %}class="product-sold-out"{% endif %} data-product-form-area>
             {% unless onboarding %}
               {%
-                include 'product-form',
+                include 'product-form-quickshop',
                 product: product,
                 selected_variant: selected_variant,
                 is_product_modal: false,
