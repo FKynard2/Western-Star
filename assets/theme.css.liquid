@@ -6660,6 +6660,7 @@ em strong {
   .desktop-collections-per-row-8  {
     display: flex;
     flex-wrap: nowrap;
+    overflow-x:scroll;
   }
   .desktop-collections-per-row-7  {
     display: flex;
@@ -22840,8 +22841,11 @@ border-radius: 10px 0 0 10px
   }
 }
 
+.modal .gallery-navigation--scroller {
+  justify-content: space-evenly;
+}
 
-/**** JUST FOR THIS DEMO: ****/
+
 
 
 .truncate{
@@ -22877,4 +22881,40 @@ border-radius: 10px 0 0 10px
   }
   
  
+}
+
+{% comment %} desktop for the quickshop {% endcomment %}
+
+@media only screen and (max-width: 1300px){
+  .truncate{
+-webkit-line-clamp: var(--line-clamp, 2);
+  }
+
+ .modal .button-tertiary {
+    font-size: 19px;
+    width: 32%;
+    margin-left: 22px;
+}
+
+}
+
+{% comment %} desktop,mobile for the yellow banner {% endcomment %}
+
+@media only screen and (max-width: 1300px){
+  .collection--item-image-highligh-banner.collection--item-image img { 
+    height: 85px;
+}
+.collection--item-image-highligh-banner {
+    width: 106px;
+    height: 112px;
+    border: 14px solid white;
+}
+
+
+}
+
+@media only screen and (min-width: 1200px){
+.desktop-collections-per-row-8 {
+    overflow-x: initial;
+}
 }
