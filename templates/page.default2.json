@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "main": {
+      "type": "static-page",
+      "settings": {}
+    },
+    "1660674075241e02d1": {
+      "type": "dynamic-image-with-text",
+      "blocks": {
+        "16606740756fdfdbdf-0": {
+          "type": "image_with_text",
+          "settings": {
+            "img_desktop": "shopify:\/\/shop_images\/basketball.jpg",
+            "img_position_desktop": "left",
+            "img_width_desktop": 40,
+            "img_height_desktop": "natural",
+            "custom_height_desktop": 440,
+            "img_mobile": "shopify:\/\/shop_images\/basketball.jpg",
+            "img_position_mobile": "top",
+            "img_height_mobile": "natural",
+            "custom_height_mobile": 500,
+            "content_background_color": "#ffffff",
+            "preheading": "",
+            "preheading_color": "#4d4d4d",
+            "heading": "",
+            "heading_color": "#4d4d4d",
+            "heading_size": "large",
+            "text_content": "<p> At Western Star we know you are looking to find reliable products for your children without breaking the bank. But in order to do so, you need a brand you can trust.<\/p><p>The problem is that most sporting goods brands out there are expensive products designed for professionals while cheap equipment is, well, cheap. This can lead you to feel as though you are buying unreliable equipment that costs you more in the long run, you and your children deserve better value.  <\/p><p> We at Western Star believe you should have access to reliable equipment designed for your children, at a reasonable price. With 30 years of experience, we design and develop products specific to your child’s needs. Whether that may be through having unique graphics, having quality equipment or just wanting to stand out, we want your child to have something to look forward to when going out on that field.  But most of all, we want your children to continue to love the sports they play.  <\/p>",
+            "text_content_color": "#4d4d4d",
+            "button_link": "",
+            "button_text": "",
+            "button_style": "primary",
+            "signpost_color": "#111111",
+            "block_link": false,
+            "text_vertical_position": "middle",
+            "text_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "16606740756fdfdbdf-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "background_color": "",
+        "heading_color": "#4d4d4d",
+        "subheading_color": "#4d4d4d",
+        "section_spacing_desktop": 50,
+        "section_spacing_mobile": 36,
+        "content_spacing": 0
+      }
+    },
+    "1660679569e6cd27cf": {
+      "type": "dynamic-contact",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/donnycocacola--3pxa1O1zoI-unsplash_1_1.png",
+        "headline": "Contact Us",
+        "headline_color": "#f7b102"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1660674075241e02d1",
+    "1660679569e6cd27cf"
+  ]
+}
