@@ -22425,11 +22425,18 @@ section > .product-row {
 
 {% comment %} this section is for the product form {% endcomment %}
 .button-tertiary {
-    width: 37%;
+    width: 32%;
     border-radius: 8px;
     font-size: 26px;
     color: white;
     margin-left: 50px;
+    border: 3px solid transparent;
+}
+
+.button-tertiary:hover{
+  background-color: white !important;
+  border: 3px solid #f7b102 !important;
+  color: #f7b102 !important;
 }
 
 {% comment %} this is for the quanity buttons {% endcomment %}
@@ -22671,9 +22678,7 @@ section > .product-row {
   .faq .question-label {
     grid-template-columns: 35% 0%;
   }
-  .product-section-combine{
-    overflow: hidden;
-  }
+ 
   .split-section{
     margin-bottom: 85px;
   }
@@ -22681,9 +22686,7 @@ section > .product-row {
 }
 
 @media only screen and (max-width: 1300px) {
-  section > .product-row{
-    overflow-y:auto;
-  }
+ 
   .faq .question-label {
     grid-template-columns: 35% 0%;
   }
@@ -22691,15 +22694,22 @@ section > .product-row {
     font-size: 17px;
     margin-left: 20px;
   }
-} 
-@media only screen and (max-width: 1600px) {
-  section > .product-row {
-    overflow-y: auto;
-  }
+  .product-form--regular .productgrid--item { 
+  width: 170px !important;
 }
+
+.product-form--regular .product-row--container {
+  right: 70px;
+}
+.product-recommendations--section .split-section {
+  width: 95%;
+}
+} 
+
 
 .template-page .site-main .shopify-section .split-section{
   position:inherit;
+  width: 100%;
 }
 
 .dynamic-newsletter-content .home-section--title-container .home-section--title {
@@ -22758,7 +22768,7 @@ div > .product--outer .product-main {
     border-block: 1px solid black;
 }
 .quantity__button {
-    width: 67px;
+    width: 55px;
     flex-shrink: 0;
     font-size: 1.8rem;
     border: 0;
@@ -22913,9 +22923,15 @@ border-radius: 10px 0 0 10px
     height: 112px;
     border: 14px solid white;
 }
-
-
 }
+
+
+@media only screen and (min-width: 1300px){
+  .dynamic-newsletter-content .home-section--title-container .home-section--title{
+    font-size: 40px;
+  }
+}
+
 
 @media only screen and (min-width: 1200px){
 .desktop-collections-per-row-8 {

@@ -199,7 +199,7 @@
       "tax_and_shipping": "Taxes and shipping calculated at checkout",
       "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
       "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
-      "reduce_quantity":"Reduce item quantity by one",
+      "reduce_quantity": "Reduce item quantity by one",
       "increase_quantity": "Increase item quantity by one",
       "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout."
     },
@@ -435,10 +435,11 @@
     "buttons": {
       "show_more": "Show more",
       "quick_shop": "Quick shop",
-      "add_to_cart": "Add to cart",
+      "add_to_cart": "Add To Cart",
       "choose_options": "Choose options",
       "view_details": "View full details",
-      "sold_out": "Sold out"
+      "sold_out": "Sold out",
+      "start_designing": "START DESIGNING"
     },
     "status": {
       "availability": "Availability",
@@ -525,6 +526,13 @@
   },
   "sections": {
     "dynamic-newsletter": {
+      "form": {
+        "placeholder": "Your email address",
+        "submit": "Subscribe",
+        "success": "Thanks for subscribing!"
+      }
+    },
+    "dynamic-contact": {
       "form": {
         "placeholder": "Your email address",
         "submit": "Subscribe",

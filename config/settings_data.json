@@ -92,7 +92,7 @@
     "type_highlights_capitalize": true,
     "type_highlights_spacing": 1,
     "type_button": "work_sans_n6",
-    "type_button_capitalize": true,
+    "type_button_capitalize": false,
     "type_button_spacing": 1,
     "type_signpost": "work_sans_n5",
     "type_product_price": "montserrat_n7",
