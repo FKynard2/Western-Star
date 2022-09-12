@@ -33,7 +33,7 @@
     {% for variant in product.variants %}
       {%- capture option_content -%}
         {%- if variant.available -%}
-          {{ variant.title }} - {{ variant.price | money }}
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
         {%- else -%}
           {{ variant.title }} - {{ 'product.status.sold_out' | t }}
         {%- endif -%}

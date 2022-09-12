@@ -40,12 +40,12 @@
 
         {% if compare_at_price > price %}
           <span class="cart-item--sale-price money">
-            {{ compare_at_price | money }}
+            {{ compare_at_price | money_with_currency }}
           </span>
         {% endif %}
 
         <span class="money">
-          {{ price | money }}
+          {{ price | money_with_currency }}
         </span>
       </div>
 
@@ -56,7 +56,7 @@
       {%- endcapture -%}
       {%- capture unit_price -%}
         <span class="cart-item__unit-price-amount money" data-unit-price-amount>
-          {{ item.unit_price | money }}
+          {{ item.unit_price | money_with_currency }}
         </span>
       {%- endcapture -%}
       {%- capture unit_measure -%}
@@ -160,7 +160,7 @@
 
       <div class="cart-item--total">
         <span class="money" aria-live="polite" data-cartitem-total="{{ price | times: item.quantity }}">
-          {{ price | times: item.quantity | money }}
+          {{ price | times: item.quantity | money_with_currency }}
         </span>
       </div>
 

@@ -31,7 +31,7 @@
     {%- capture price_html -%}
       <span class="visually-hidden">{{ 'product.item.price.original' | t }}</span>
       <span class="money">
-        {{ compare_at_price | money }}
+        {{ compare_at_price | money_with_currency  }} 
       </span>
     {%- endcapture -%}
 
@@ -45,15 +45,13 @@
       <span class="money"></span>
     {% endif %}
   </div>
-
+{% comment %} took out  data-price from this div to shop the USD for every variant not sure if its needed have to check {% endcomment %}
   <div class="price--main" data-price>
     {%- capture price_html -%}
       <span class="money">
-      {% if settings.currency_code_enabled %}
-        {{ price  | money_with_currency }} 
-        {% else %}
-        {{ price | money }}
-        {% endif %}
+      
+        {{ price  | money }} 
+       
       </span>
     {%- endcapture -%}
 
@@ -63,7 +61,7 @@
       {% if on_sale and show_original %}
         <span class="visually-hidden">{{ 'product.item.price.current' | t }}</span>
       {% endif %}
-      {{ price_html }}
+      {{ price_html  }}{% if settings.currency_code_enabled %} USD {% endif %}
     {% endif %}
   </div>
 
@@ -72,7 +70,7 @@
     <span class="product__total-quantity" data-total-quantity>{{ variant.unit_price_measurement.quantity_value }}{{ variant.unit_price_measurement.quantity_unit }}</span>
   {%- endcapture -%}
   {%- capture unit_price -%}
-    <span class="product__unit-price-amount money" data-unit-price-amount>{{ variant.unit_price | money }}</span>
+    <span class="product__unit-price-amount money" data-unit-price-amount>{{ variant.unit_price | money_with_currency }}</span>
   {%- endcapture -%}
   {%- capture unit_measure -%}
     <span class="product__unit-price-measure" data-unit-price-measure>

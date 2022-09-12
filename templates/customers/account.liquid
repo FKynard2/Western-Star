@@ -45,7 +45,7 @@
                     {{ order.fulfillment_status_label }}
                   </td>
                   <td class="account-order-list-total">
-                    <span class="money">{{ order.total_price | money }}</span>
+                    <span class="money">{{ order.total_price | money_with_currency }}</span>
                   </td>
                 </tr>
               {% endfor %}

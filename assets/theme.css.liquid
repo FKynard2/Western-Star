@@ -16771,7 +16771,7 @@ noscript .disclosure-list {
 }
 @media screen and (max-width: 1079px) and (min-width: 1024px) {
   .product-row .productgrid--item {
-    width: calc(25% - ({{ settings.product_grid_column_space_desktop | append: 'px' }} * (2 / 3) * (3 / 4)));
+    {% comment %} width: calc(25% - ({{ settings.product_grid_column_space_desktop | append: 'px' }} * (2 / 3) * (3 / 4))); {% endcomment %}
   }
   .featured-collection--container .product-row .productgrid--item:nth-child(4):nth-last-child(2) {
     display: none;
@@ -16782,12 +16782,12 @@ noscript .disclosure-list {
 }
 @media screen and (min-width: 1024px) {
   .product-row .productgrid--item {
-    width: calc(25% - ({{ settings.product_grid_column_space_desktop | append: 'px' }} * 3 / 4));
+    {% comment %} width: calc(25% - ({{ settings.product_grid_column_space_desktop | append: 'px' }} * 3 / 4)); {% endcomment %}
   }
 }
 @media screen and (min-width: 1080px) {
   .product-row .productgrid--item {
-    width: calc(20% - ({{ settings.product_grid_column_space_desktop | append: 'px' }} * 4 / 5));
+    {% comment %} width: calc(20% - ({{ settings.product_grid_column_space_desktop | append: 'px' }} * 4 / 5)); {% endcomment %}
     margin-right: {{ settings.product_grid_column_space_desktop | append: 'px' }};
   }
   .product-row .productgrid--item:last-child {
@@ -22387,7 +22387,7 @@ summary::after {
     align-items: center;
     margin-bottom: 30px;
     position: absolute;
-    bottom: 20%;
+    top: 50%;
 }
 
 .product-section-combine{
@@ -22400,7 +22400,7 @@ section > ul > .productgrid--item .productitem--action .product-item-btn {
 }
 
 section > ul > .productgrid--item {
-  width: 220px !important;
+  width: 220px ;
 }
 
 section > ul > .productgrid--item .productitem--info {
@@ -22425,17 +22425,17 @@ section > .product-row {
 
 {% comment %} this section is for the product form {% endcomment %}
 .button-tertiary {
-    width: 32%;
+    width: 30%;
     border-radius: 8px;
-    font-size: 26px;
+    font-size: 20px;
     color: white;
     margin-left: 50px;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
 }
 
 .button-tertiary:hover{
   background-color: white !important;
-  border: 3px solid #f7b102 !important;
+  border: 2px solid #f7b102 !important;
   color: #f7b102 !important;
 }
 
@@ -22684,6 +22684,21 @@ section > .product-row {
   }
  
 }
+@media only screen and (max-width: 1600px) {
+   .product-form--regular .productgrid--item { 
+  width: 200px; 
+}
+}
+@media only screen and (max-width: 1500px) {
+   .product-form--regular .productgrid--item { 
+  width: 190px; 
+}
+}
+@media only screen and (max-width: 1400px) {
+   .product-form--regular .productgrid--item { 
+  width: 180px; 
+}
+}
 
 @media only screen and (max-width: 1300px) {
  
@@ -22695,7 +22710,7 @@ section > .product-row {
     margin-left: 20px;
   }
   .product-form--regular .productgrid--item { 
-  width: 170px !important;
+  width: 170px; 
 }
 
 .product-form--regular .product-row--container {
@@ -22707,10 +22722,13 @@ section > .product-row {
 } 
 
 
+
+
 .template-page .site-main .shopify-section .split-section{
   position:inherit;
   width: 100%;
 }
+
 
 .dynamic-newsletter-content .home-section--title-container .home-section--title {
   text-align: left;
@@ -22748,14 +22766,14 @@ div > .product--outer .product-main {
 }
 .quantity-input {
   width: 67px;
-  height: 41px
+  height: 36px
 }
 
 
 
 .quantity-input {
     color: currentColor;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     opacity: .85;
     text-align: center;
@@ -22768,9 +22786,9 @@ div > .product--outer .product-main {
     border-block: 1px solid black;
 }
 .quantity__button {
-    width: 55px;
+    width: 40px;
     flex-shrink: 0;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     border: 0;
     background-color: transparent;
     cursor: pointer;
@@ -22805,7 +22823,7 @@ border-radius: 10px 0 0 10px
 .form__label {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     padding: 5px;
     margin-right: 10px;
@@ -22943,4 +22961,8 @@ border-radius: 10px 0 0 10px
   .productitem--info {
     width: 100%; 
   }
+}
+
+.no-display {
+  display: none;
 }

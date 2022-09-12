@@ -79,7 +79,7 @@
               {{ 'cart.general.subtotal' | t }}
 
               <span class="money" data-cart-total="{{ cart.total_price }}">
-                {{ cart.total_price | money }}
+                {{ cart.total_price | money_with_currency}}
               </span>
             </div>
           </div>
@@ -307,7 +307,7 @@
       <div class="cart-total" data-cart-totals>
         <div class="cart-subtotal">
           <span aria-live="polite">{{ 'cart.general.subtotal' | t }}</span>
-          <span class="money" aria-live="polite" data-cart-total>{{ cart.total_price | money }}</span>
+          <span class="money" aria-live="polite" data-cart-total>{{ cart.total_price | money_with_currency }}</span>
         </div>
       </div>
 

@@ -18,7 +18,7 @@
 
     {%- capture tag_text -%}
       <span class="filter-text">
-        {{ range_min | money }} - {{ range_max | money }}
+        {{ range_min | money_with_currency }} - {{ range_max | money_with_currency }}
       </span>
 
       {{- tag_icon -}}

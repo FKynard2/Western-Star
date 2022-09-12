@@ -25,7 +25,7 @@
   {% assign sales_saved = compare_at_price | minus: price %}
 
   {%- capture saved_price -%}
-    <span class="money" data-price-money-saved>{{ sales_saved | money }}</span>
+    <span class="money" data-price-money-saved>{{ sales_saved | money_with_currency }}</span>
   {%- endcapture -%}
 
   {%- capture percent_saved -%}

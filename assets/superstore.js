@@ -25595,6 +25595,8 @@
       _onVariantChange(e) {
         this._setVisible(e.currentTarget.value === this.variantId);
       }
+
+
     } // CONCATENATED MODULE: ./source/scripts/shortcodes/Details.js
     class Details extends Shortcode {
       static get shortcode() {
@@ -30217,7 +30219,7 @@ const RULES = `
         const features = [];
        
        
-            
+        
   
             
 
@@ -30934,6 +30936,8 @@ const RULES = `
         this.variantHelper = null;
         this.atcCallbacks = options.atcCallbacks;
 
+        this._filterThumbnails(this.product);
+
         if (this.product && 'media' in this.product) {
           this.gallery = new ProductGallery({
             el: options.gallery,
@@ -31109,6 +31113,8 @@ const RULES = `
 
         this._updateStockLevel(variant);
 
+        this._filterThumbnails(variant);
+
         this._updateButton(variant);
 
         this._updateSwatchLabel(variant);
@@ -31199,6 +31205,25 @@ const RULES = `
         }
       }
 
+      _filterThumbnails(variant){
+        if (variant.featured_image != null && variant.featured_image.alt != null) {
+          //show thumbails for selected color
+          // [data-thumbnail-color="red"]
+          $('[data-thumbnail-color]').hide();
+          var selected_color = variant.featured_image.alt;
+          var thumbnail_selector = '[data-thumbnail-color = "' + selected_color + '"]';
+          var stock = '[data-thumbnail-color= "stock"]';
+          $(thumbnail_selector).show();
+          $(stock).show();
+          
+        } else {
+          //show just the stock photos thumbnails
+          $('[data-thumbnail-color]').hide();
+          $('[data-thumbnail-color="stock"').show();
+          $('[data-gallery-selected="true"]').show();
+        }
+        }
+
       _updateButton(variant) {
         if (variant.available) {
           this.$productAtcButton.text(this.context.product_available);
@@ -31263,6 +31288,8 @@ const RULES = `
           }
         }
       }
+
+
 
       _AddToCartFlyout(event) {
         event.preventDefault();

@@ -63,8 +63,9 @@
         class="
           product-gallery--media-thumbnail
           product-gallery--{{ media.media_type }}-thumbnail
-          
         "
+        {% comment %} In order for this to work the images have to be given a alt name {% endcomment %}
+        data-thumbnail-color="{{media.alt}}" 
         type="button"
         tab-index="0"
         aria-label="{{ media.alt }} {{ 'general.accessibility.nav_product_thumbnail' | t }}"
