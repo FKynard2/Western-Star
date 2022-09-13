@@ -29,21 +29,23 @@
 {% endstyle %}
 
 <div class='split-section'>
-    <section style="width:100%; margin-bottom:100px;"> 
+    <section class='accordion' style="width:100%; margin-bottom:100px; z-index: 1;"> 
         {% for block in section.blocks %}
         {% if block.type == 'Product_description'  %}
-        <div class="faq">
-                <div class="question">
-                    <input type="checkbox" id="question-{{ forloop.index }}" class="question-toggle">
+        <div class="faq ">
+                <div class="question  ">
+                    <input type="checkbox" id="question-{{ forloop.index }}" class="question-toggle radio " value="1" name="fooby[1][]">
                     <label for="question-{{ forloop.index }}" class="question-label">{{block.settings.question}}</label>
-    
-                    <div class="answer">{{block.settings.description}}{{ product.description }}</div>
+                    
+                    
+                    <div class="answer ">{{block.settings.description}}{{ product.description }}</div>
                 </div>
+                
             </div>
             {% elsif block.type == 'metafield' and block.settings.description != blank  %} 
              <div class="faq">
                 <div class="question">
-                    <input type="checkbox" id="question-{{ forloop.index }}" class="question-toggle">
+                    <input type="checkbox" id="question-{{ forloop.index }}" class="question-toggle radio" value="1" name="fooby[1][]">
                     <label for="question-{{ forloop.index }}" class="question-label">{{block.settings.question}}</label>
     
                     <div class="answer">{{block.settings.description}}</div>
